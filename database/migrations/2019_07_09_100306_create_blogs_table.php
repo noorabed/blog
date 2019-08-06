@@ -17,7 +17,7 @@ class CreateBlogsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->string('post_tittle')->nullable();
-            $table->string('post_descripition')->nullable();
+            $table->text('post_descripition')->nullable();
             $table->string('post_photo')->nullable();
             $table->timestamps();
         });

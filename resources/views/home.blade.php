@@ -7,7 +7,6 @@
 @stop
 
 @section('content')
-
-    <p>You are logged in!</p>
+    <p>Welcome {{ Auth::user()->name }},you  are logged in!</p>
 
 @stop

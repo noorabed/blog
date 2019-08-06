@@ -4,7 +4,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Blog;
 use App\User;
-
 use App\Category;
 use DB;
 use Validator;
@@ -19,8 +18,10 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
+
         $categories = Category::all();
         if(request()->ajax())
         {
@@ -30,16 +31,20 @@ class BlogController extends Controller
                     $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
                     $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
                     return $button;
+
+                }) ->addColumn('post_descripition', function($data){
+                    $string_limit= str_limit($data->post_descripition,100);
+                   return $string_limit ;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('layouts.index',compact('categories'));
+        return view('post.index',compact('categories'));
         /**$blogs = Blog::orderBy('id','desc')->paginate(1);
-        return view('layouts.index', compact('blogs'));
+        return view('post.index', compact('blogs'));
 
         $users =User::all();
-        return view('layouts.home', compact('users'));*/
+        return view('post.home', compact('users'));*/
 
 
     }
@@ -52,7 +57,7 @@ class BlogController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('layouts.create',compact('categories'));
+        return view('post.create',compact('categories'));
     }
 
     /**
@@ -66,7 +71,7 @@ class BlogController extends Controller
 
     public function store(Request $request)
     {
-
+        //dd($request->all());
         $rules = array(
             'post_tittle'    =>  'required',
             'post_descripition'     =>  'required',
@@ -163,10 +168,6 @@ DB::table('blogs')->insert([
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        return view('layouts.show');
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -182,7 +183,7 @@ DB::table('blogs')->insert([
             return response()->json(['data' => $data]);
         }
       /**  $blog = Blog::findOrFail($id);
-        return view('layouts.edit',compact('blog'));*/
+        return view('post.edit',compact('blog'));*/
 
 
     }
@@ -274,7 +275,10 @@ DB::table('blogs')->insert([
         return redirect('/blogs')->with('success', 'Post is successfully updated');*/
     }
 
-
+public function show(){
+        $blogs=Blog::all();
+        return view('blog.index',compact('blogs'));
+}
     /**
      * Remove the specified resource from storage.
      *

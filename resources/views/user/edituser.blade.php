@@ -52,7 +52,7 @@
                     </div>
                 <div class="form-group">
                        <label for="Photo">User Photo :</label>
-                       <input type="file" class="form-control" name="user_photo" value="{{$user->password}}"/>
+                       <input type="file" class="form-control" name="user_photo" value="{{$user->user_photo}}"/>
                 </div>
                 <button type="submit" class="btn btn-warning">Update User</button>
             </form>

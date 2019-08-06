@@ -131,13 +131,8 @@ return [
         'ACCOUNT SETTINGS',
         [
             'text' => ' UserProfile',
-            'url'  => 'profile',
+            'url'  => 'user/profile',
             'icon' => 'user',
-        ],
-        [
-            'text' => 'Categories',
-            'url'  => 'category/create',
-            'icon' => 'circle-o',
         ],
         [
             'text' => ' List Of Categories',
