@@ -11,9 +11,6 @@ class CategoryController extends Controller
 {
     public function index()
     {
-       /**$categories = Category::paginate(1);
-
-        return view('category.categorylist', compact('categories'));*/
         $categories = Category::all();
         if(request()->ajax())
         {
@@ -54,29 +51,7 @@ class CategoryController extends Controller
         $category->save();
 
         return response()->json(['success' => 'Data Added successfully.']);
-       // dd($request->all());
-
-        /**$category->title = $request->get('title');
-        $category->user()->associate(auth()->id());
-        $category->save();
-
-        $error = Validator::make($request->all());
-        if($error->fails())
-        {
-            return response()->json(['errors' => $error->errors()->all()]);
-        }
-        return response()->json(['success' => 'Category Added successfully.']);*/
-
-
-
-       /**$category = new Category;
-        $category->title = $request->get('title');
-        //$category->user_id = $request->get('user_id');
-        $category->user()->associate(auth()->id());
-        $category->save();
-        return redirect('/category/categorylist')->with('success', 'Category Added successfully.');
-        // return 'Success';*/
-    }
+       }
     public function edit($id)
     {
         if(request()->ajax())
@@ -84,9 +59,7 @@ class CategoryController extends Controller
             $data = Category::findOrFail($id);
             return response()->json(['data' => $data]);
         }
-       /** $category = Category::findOrFail($id);
 
-        return view('category.editcategory', compact('category'));*/
     }
     public function update(Request $request)
     {
@@ -97,21 +70,11 @@ class CategoryController extends Controller
         Category::whereId($request->hidden_id)->update($validated);
 
         return response()->json(['success' => 'Category is successfully updated']);
-
-       /** $validated = $request->validate([
-            'title' => 'required',
-        ]);
-        Category::whereId($id)->update($validated);
-        return redirect('/category/categorylist')->with('success', 'Category is successfully updated');*/
     }
     public function destroy($id)
     {
         $data = Category::find($id);
         $data->delete();
-        //dd($id);
-        /**$category = Category::find($id);
-        $category->delete();
-        return redirect('/category/categorylist')->with('success', 'Category deleted  successfully.');*/
 
     }
 }

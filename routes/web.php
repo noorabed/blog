@@ -52,6 +52,6 @@ Route::resource('user/profile', 'ProfileController');
 Route::post('user/profile/update', 'ProfileController@update')->name('user.update');
 //blog frontend
 Route::get('index', 'BlogController@show')->name('blogs.show');
-Route::get('/show', function () {
-    return view('blog.show');
-});
+Route::get('blog/show/{id}', 'BlogController@view')->name('blogs.view');
+Route::get('/category/{category}','BlogController@category')->name('category');
+Route::get('/popular/{popular}','BlogController@popular')->name('popular');

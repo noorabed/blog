@@ -8,7 +8,7 @@ use App\Category;
 use DB;
 use Validator;
 use Redirect;
-use View;
+
 class BlogController extends Controller
 {
 
@@ -40,11 +40,7 @@ class BlogController extends Controller
                 ->make(true);
         }
         return view('post.index',compact('categories'));
-        /**$blogs = Blog::orderBy('id','desc')->paginate(1);
-        return view('post.index', compact('blogs'));
 
-        $users =User::all();
-        return view('post.home', compact('users'));*/
 
 
     }
@@ -75,7 +71,8 @@ class BlogController extends Controller
         $rules = array(
             'post_tittle'    =>  'required',
             'post_descripition'     =>  'required',
-            'post_photo'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'post_photo'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         );
 
         $error = Validator::make($request->all(), $rules);
@@ -90,77 +87,23 @@ class BlogController extends Controller
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
 
         $image->move(public_path('image'), $new_name);
-
-        $form_data = array(
+               $form_data = array(
             'post_tittle'        =>  $request->post_tittle,
             'post_descripition'         =>  $request->post_descripition,
             'post_photo'             =>  $new_name,
-            'user_id'   =>auth()->id()
+            'user_id'   =>auth()->id(),
+             'view_count'        => rand(1,10)*10,
+              'category_id'        =>$request->category,
         );
         //dd($form_data);
 
         $create= Blog::create($form_data);
-        $category = Category::all();
-        $create->categories()->attach($category);
+        //$category = Category::all();
+        //$create->categories()->attach($category);
         session()->flash('suceess', 'Task was successful!');
 
         return response()->json(['success' => 'Data Added successfully.']);
-        /**
-        //dd($request->all());
-
-        $request->validate([
-            'post_tittle'    =>  'required',
-            'post_descripition'     =>  'required',
-            'post_photo'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-
-        $image = $request->file('post_photo');
-
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('image'), $new_name);
-        $form_data = array(
-            'post_tittle'       =>   $request->post_tittle,
-            'post_descripition'        =>   $request->post_descripition,
-            'post_photo'            =>   $new_name,
-            'user_id'   =>auth()->id()
-        );
-     $create= blog::create($form_data);
-
-
-
-       // $create->user()->associate(auth()->id());
-        $category = Category::all();
-        $create->categories()->attach($category);
-        session()->flash('suceess', 'Task was successful!');
-
-        return redirect('/blogs')->with('success', 'Blog Added successfully.');*/
-
-
-
-        /**$tittle = $request->post_tittle;
-        $descripition = $request->post_descripition;
-
-            request()->validate([
-            'post_tittle' => 'required',
-            'post_descripition' => 'required',
-          'post_photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-
-     $imageName = time().'.'.request()->post_photo->getClientOriginalExtension();
-      request()->post_photo->move(public_path('image'), $imageName);
-
-DB::table('blogs')->insert([
-    'post_tittle' =>$tittle,
-    'post_descripition' =>$descripition,
-    'post_photo' => $imageName,
-
-]);
-        return redirect('/blogs')->with('success', 'Blog is successfully saved');
-*/
     }
-
-
-
 
     /**
      * Display the specified resource.
@@ -182,8 +125,6 @@ DB::table('blogs')->insert([
             $data = Blog::find($id);
             return response()->json(['data' => $data]);
         }
-      /**  $blog = Blog::findOrFail($id);
-        return view('post.edit',compact('blog'));*/
 
 
     }
@@ -241,44 +182,47 @@ DB::table('blogs')->insert([
         Blog::whereId($request->hidden_id)->update($form_data);
         return response()->json(['success' => 'Data is successfully updated']);
 
-        /**
-      //  dd($request->all());
-        $image_name = $request->hidden_image;
-        $image = $request->file('post_photo');
-        if($image != '')
-        {
-            $request->validate([
-            'post_tittle'    =>  'required',
-            'post_descripition'     =>  'required',
-            'post_photo'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('image'), $image_name);
-        }
-        else
-        {
-            $request->validate([
-                'post_tittle'    =>  'required',
-                'post_descripition'     =>  'required'
-            ]);
-        }
-
-        $form_data = array(
-            'post_tittle'      =>   $request->post_tittle,
-            'post_descripition'        =>   $request->post_descripition,
-            'post_photo'            =>   $image_name
-        );
-
-        Blog::whereId($id)->update($form_data);
-
-        return redirect('/blogs')->with('success', 'Post is successfully updated');*/
     }
 
-public function show(){
-        $blogs=Blog::all();
-        return view('blog.index',compact('blogs'));
-}
+     public function show(){
+        $categories = Category::with('posts')
+            ->orderBy('title','asc')
+            ->get();
+
+        $blogs=Blog::with('user')
+            ->latest()
+            ->get();
+
+        return view('blog.index',compact('blogs', 'categories'));
+    }
+
+        public function view($id){
+
+        $categories = Category::orderBy('title','asc') ->get();
+        $blogs=Blog::findOrFail($id);
+
+        return view('blog.show',compact('blogs', 'categories'));
+    }
+
+    public function category($id){
+        $categories = Category::with('posts')
+            ->orderBy('title','asc')
+            ->get();
+
+        $blogs=Blog::with('user')
+            ->latest()
+            ->where('category_id',$id)
+            ->get();
+        //dd($blogs,$categories);
+        return view('blog.index',compact('blogs', 'categories'));}
+
+   /** public function popular(){
+
+        $blogs=Blog::orderBy('view_count')->get();
+
+        return view('blog.show',compact('blogs'));
+    }*/
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -289,8 +233,5 @@ public function show(){
     {
         $data = Blog::findOrFail($id);
         $data->delete();
-       /** $blog = Blog::findOrFail($id);
-        $blog->delete();
-        return redirect('/blogs')->with('success', 'Blog is successfully deleted');*/
     }
 }

@@ -12,12 +12,20 @@ class Blog extends Model
     public function user()
     {
         return $this->belongsTo('App\User');
-        //return $this->belongsTo(User::class);
     }
-    //protected $table = 'blogs';
-    public function categories()
+//
+//    public function categories()
+//    {
+//        return $this->belongsToMany('App\Category','category_blog');
+//    }
+    public function category()
     {
-        return $this->belongsToMany(Category::class,'category_blog');
+        return $this->belongsTo('App\Category');
+    }
+
+    public function comment()
+    {
+        return $this->hasMany('App\Comment');
     }
 }
 

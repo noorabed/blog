@@ -13,16 +13,11 @@ class UserController extends Controller
 {
     public function index()
     {
-
-        /**$users =User::all();
-
-        return view('user.index', compact('users'));*/
-
+//
     }
     public function create()
     {
-        /**$users =User::all();
-        return view('user.adduser',compact('users'));*/
+        //
     }
     public function view()
     {
@@ -43,8 +38,6 @@ class UserController extends Controller
                 ->make(true);
         }
         return view('user.view',compact('users'));
-       /** $users =User::paginate(1);
-        return view('user.view',compact('users'));*/
     }
     public function store(Request $request)
     {
@@ -80,32 +73,7 @@ class UserController extends Controller
        User::create($form_data);
 
         return response()->json(['success' => 'Data Added successfully.']);
-        /**
-        //dd($request->all());
-        $validated = $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' =>  'required',
-            'user_photo' =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request['password']);
-        if(!$request->state){
-            $user->state =false;
-        }
-        $image = $request->file('user_photo');
 
-        $profileName = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('image'), $profileName);;
-        $user-> user_photo= $profileName;
-
-
-        $user->save();
-
-        // $user = User::create($validated);
-        return redirect('/view')->with('success', 'User is successfully saved');*/
     }
     public function edit($id)
     {
@@ -113,83 +81,55 @@ class UserController extends Controller
         {
             $data = User::findOrFail($id);
             return response()->json(['data' => $data]);}
-       /** $user = User::findOrFail($id);
-
-        return view('user.edituser', compact('user'));*/
     }
     public function update(Request $request)
     {
         $image_name = $request->hidden_image;
         $image = $request->file('user_photo');
-        if($image != '')
-        {
+        if ($image != '') {
             $rules = array(
-                'name'    =>  'required',
-                'email'     =>  'required',
-                'password' =>   'required',
-                'user_photo'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+                'name' => 'required',
+                'email' => 'required',
+                'password' => 'required',
+                'user_photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             );
             $error = Validator::make($request->all(), $rules);
-            if($error->fails())
-            {
+            if ($error->fails()) {
                 return response()->json(['errors' => $error->errors()->all()]);
             }
 
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('image'), $image_name);
-        }
-        else
-        {
+        } else {
             $rules = array(
-                'name'    =>  'required',
-                'email'     =>  'required',
-                 'password' =>  'required'
+                'name' => 'required',
+                'email' => 'required',
+                'password' => 'required'
             );
 
             $error = Validator::make($request->all(), $rules);
 
-            if($error->fails())
-            {
+            if ($error->fails()) {
                 return response()->json(['errors' => $error->errors()->all()]);
             }
 
         }
 
         $form_data = array(
-            'name'      =>   $request->name,
-            'email'        =>   $request->email,
+            'name' => $request->name,
+            'email' => $request->email,
             'password' => bcrypt($request->password),
-            'user_photo'            =>   $image_name
+            'user_photo' => $image_name
         );
 
         User::whereId($request->hidden_id)->update($form_data);
         return response()->json(['success' => 'Data is successfully updated']);
-        /*$user = User::findOrFail($id);
-        if($request->hasFile('user_photo')){
-            $file=$request->file('user_photo');
-            $extension=$file->getClientOriginalExtension();
-            $filename= time().'.'.$extension;
-            $file->move(public_path('image'), $filename);
-            $user-> user_photo= $filename;
-        }
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            //'password' => bcrypt($request->password),
-            'user_photo' => $request->$filename,
-        ]);
-        return redirect('/view')->with('success', 'User is successfully updated');*/
     }
 
     public function destroy($id)
     {
         $data = User::findOrFail($id);
         $data->delete();
-        /// dd($id);
-       /** $user = User::findOrFail($id);
-        $user->delete();
-        return redirect('/view')->with('success', ' User is successfully deleted');*/
     }
     public function changestate($id)
     {
@@ -208,10 +148,6 @@ class UserController extends Controller
         }
       $user->save();
        return response()->json(['success' => 'json Changed successfully.']);
-        // $users=User::all();
-        //return redirect()->back();
-        //return redirect()->route('users.index');
-        //  return view('user.view', compact('users'));
-        //return redirect('/view')->with('success', ' User is successfully change state');
+
     }
 }

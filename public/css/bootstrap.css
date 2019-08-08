@@ -5212,9 +5212,12 @@ a.thumbnail.active {
 }
 .media-object {
   display: block;
+
 }
 .media-object.img-thumbnail {
   max-width: none;
+  width:100px;
+  height: 100px;
 }
 .media-right,
 .media > .pull-right {

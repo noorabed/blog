@@ -12,8 +12,13 @@ class Category extends Model
         return $this->belongsTo(User::class);
     }
     protected $table = 'categories';
-    public function blogs()
+//    public function blogs()
+//    {
+//        return $this->belongsToMany('App\Blog','category_blog');
+//    }
+
+    public function posts()
     {
-        return $this->belongsToMany(Blog::class,'category_blog');
+        return $this->hasMany('App\Blog');
     }
 }

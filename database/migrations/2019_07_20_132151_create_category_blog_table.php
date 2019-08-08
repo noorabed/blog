@@ -17,7 +17,6 @@ class CreateCategoryBlogTable extends Migration
             $table->bigIncrements('id');
             $table->integer('category_id')->unsigned();
             $table->integer('blog_id')->unsigned();
-          //  $table->primary(['category_id','blog_id']);
             $table->timestamps();
         });
     }

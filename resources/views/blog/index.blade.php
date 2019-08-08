@@ -5,29 +5,29 @@
 
         <div class="col-md-8">
             @foreach($blogs as $blog)
-            <article class="post-item">
+            <article class="post-item"}>
                 <div class="post-item-image">
-                    <a href="post.html">
-                        <img src="{{ URL::to('/') }}/image/{{$blog->post_photo}}" alt="">
+                    <a href="{{ route('blogs.view',$blog->id)}}">
+                        <img src="{{ URL::to('/') }}/image/{{$blog->post_photo}}" style="height: 400px;" alt="">
                     </a>
                 </div>
                 <div class="post-item-body">
                     <div class="padding-10">
-                        <h2><a href="post.html">{{$blog->post_tittle}}</a></h2>
-                        <p>{{$blog->post_descripition}}</p>
+                        <h2><a href="{{ route('blogs.view', $blog->id) }}}">{{$blog->post_tittle}}</a></h2>
+                        <p>{!! str_limit($blog->post_descripition,100) !!}</p>
                     </div>
 
                     <div class="post-meta padding-10 clearfix">
                         <div class="pull-left">
                             <ul class="post-meta-group">
-                                <li><i class="fa fa-user"></i><a href="#"> Admin</a></li>
-                                <li><i class="fa fa-clock-o"></i><time> February 12, 2016</time></li>
+                                <li><i class="fa fa-user"></i><a href="{{ route('blogs.view', $blog->id) }}"> {{ @ $blog->user->name}}</a></li>
+                                <li><i class="fa fa-clock-o"></i><time>{{ date('F d, Y',  strtotime($blog->created_at)) }}</time></li>
                                 <li><i class="fa fa-tags"></i><a href="#"> Vue Js</a>, <a href="#"> Laravel</a></li>
                                 <li><i class="fa fa-comments"></i><a href="#">4 Comments</a></li>
                             </ul>
                         </div>
                         <div class="pull-right">
-                            <a href="post.html">Continue Reading &raquo;</a>
+                            <a href="{{ route('blogs.view',$blog->id)}}" >Continue Reading &raquo;</a>
                         </div>
                     </div>
                 </div>
