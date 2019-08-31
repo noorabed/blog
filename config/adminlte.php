@@ -115,6 +115,13 @@ return [
             'can'  => 'manage-blog',
         ],
         [
+            'text'        => 'Blogs',
+            'url'         => 'index',
+            'icon'        => 'file',
+            'label'       => 4,
+            'label_color' => 'success',
+        ],
+        [
             'text'        => ' List Of Blogs',
             'url'         => 'blogs',
             'icon'        => 'file',

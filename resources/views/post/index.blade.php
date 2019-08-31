@@ -1,8 +1,4 @@
-@extends('adminlte::page')
-
-@section('title', 'AdminLTE')
-
-@section('content_header')
+@extends('dashboard_layouts/master')
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -10,22 +6,42 @@
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-@stop
 
 @section('content')
-    <div align="right">
-   <button type="button" name="create_post" id="create_post" class="btn btn-success btn-sm">Create Post</button>
-{{--    <a href="{{route('blogs.create')}}" class="btn btn-success btn-sm">Create Post</a>--}}
-    </div>
+    <section class="content-header">
+        <h1>
+            Post
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">post</li>
+        </ol>
+    </section>
+    <br>
     <br />
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div align="right">
+                            <br>
+        {{--<button type="button" name="create_post" id="create_post" class="btn btn-success btn-sm">Create Post</button>--}}
+                            @can('blogs.create',Auth::user())
+        <a href="{{route('blogs.create')}}" class="btn btn-success btn-sm">Create Post</a>
+                                @endcan
+                        </div>
+                        <br>
     <div class="table-responsive">
-        <table class="table table-bordered table-striped" id="post_table">
+        <table class="table table-bordered" id="post_table">
             <thead>
             <tr>
                 <th width="10%">Image</th>
-                <th width="35%">Post Tittle</th>
+                <th width="20%">Post Tittle</th>
                 <th width="35%">Post Descripition</th>
-                <th width="30%">Action</th>
+                <th width="20%">Date</th>
+                <th width="20%">Action</th>
+
             </tr>
             </thead>
         </table>
@@ -33,57 +49,10 @@
     <br />
     <br />
     </div>
-
-    <div id="formModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add New Post</h4>
-                </div>
-                <div class="modal-body">
-                    <span id="form_result"></span>
-                    <form method="post" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label class="control-label col-md-4" >Post Tittle : </label>
-                            <br>
-                            <div class="col-md-8">
-                                <input type="text" name="post_tittle" id="post_tittle" class="form-control" />
-
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Post Descripition : </label>
-                            <br>
-                            <div class="col-md-12">
-                                <textarea id="editor1" name="post_descripition" rows="10" cols="80"></textarea>
-
-{{--                                <input type="text" name="post_descripition" id="post_descripition" class="form-control" />--}}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Category Classifications: </label>
-                            <div class="col-md-8">
-                                <select name="category" id="" class="form-control" >
-                                    @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->title}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-md-4">Select Post Image : </label>
-                            <div class="col-md-8">
-                                <input type="file" name="post_photo" id="post_photo" />
-                                <span id="store_image"></span>
-                            </div>
-                        </div>
                         <br />
                         <div class="form-group" align="center">
                             <input type="hidden" name="action" id="action" />
                             <input type="hidden" name="hidden_id" id="hidden_id" />
-                            <input type="submit" name="action_button" id="action_button" class="btn btn-warning" value="Add" />
                         </div>
                     </form>
                 </div>
@@ -109,14 +78,13 @@
         </div>
     </div>
 
+    </div>
+    </div>
+
+    </div>
+    </section>
     <script src="https://adminlte.io/themes/AdminLTE/bower_components/ckeditor/ckeditor.js"></script>
     <script>
-        $(function () {
-            // Replace the <textarea id="editor1"> with a CKEditor
-            // instance, using default configuration.
-            CKEDITOR.replace('editor1')
-            //bootstrap WYSIHTML5 - text editorx
-        })
         $(document).ready(function(){
 
             $('#post_table').DataTable({
@@ -143,119 +111,23 @@
                         name: 'post_descripition'
                     },
                     {
+                        data: 'published_at',
+                        name: 'published_at',
+                        render : function (data,full ) {
+                           // return moment(data).format('DD-MMM-YYYY');
+                            return getStatus(data);
+                        },
+                    },
+
+                    {
                         data: 'action',
                         name: 'action',
                         orderable: false
                     }
+
                 ]
             });
 
-            $('#create_post').click(function(){
-                $('.modal-title').text("Add New Post");
-                $('#action_button').val("Add");
-                $('#action').val("Add");
-                $('#formModal').modal('show');
-            });
-
-            $('#sample_form').on('submit', function(event){
-                event.preventDefault();
-                if($('#action').val() == 'Add')
-                {
-                    let data =new FormData(this)
-                    data.append('post_descripition', CKEDITOR.instances.editor1.getData());
-                   // console.log(CKEDITOR.instances.editor1.getData());
-                    $.ajax({
-                        url:"{{ route('blogs.store') }}",
-                        method:"POST",
-                        data: data,
-                        contentType: false,
-                        cache:false,
-                        processData: false,
-                        dataType:"json",
-                        success:function(data)
-                        {
-                            var html = '';
-                            if(data.errors)
-                            {
-                                html = '<div class="alert alert-danger">';
-                                for(var count = 0; count < data.errors.length; count++)
-                                {
-                                    html += '<p>' + data.errors[count] + '</p>';
-                                }
-                                html += '</div>';
-                            }
-                            if(data.success)
-                            {
-                                html = '<div class="alert alert-success">' + data.success + '</div>';
-                                $('#sample_form')[0].reset();
-                                $('#post_table').DataTable().ajax.reload();
-                                $('#formModal').modal('hide');
-                            }
-                            $('#form_result').html(html);
-                        }
-                    })
-                }
-
-                if($('#action').val() == "Edit")
-                {
-                    let data =new FormData(this)
-                    data.append('post_descripition', CKEDITOR.instances.editor1.getData());
-                    $.ajax({
-                        url:"{{ route('blogs.update') }}",
-                        method:"POST",
-                        data:data,
-                        contentType: false,
-                        cache: false,
-                        processData: false,
-                        dataType:"json",
-                        success:function(data)
-                        {
-                            var html = '';
-                            if(data.errors)
-                            {
-                                html = '<div class="alert alert-danger">';
-                                for(var count = 0; count < data.errors.length; count++)
-                                {
-                                    html += '<p>' + data.errors[count] + '</p>';
-                                }
-                                html += '</div>';
-                            }
-                            if(data.success)
-                            {
-                                html = '<div class="alert alert-success">' + data.success + '</div>';
-                                $('#sample_form')[0].reset();
-                                $('#store_image').html('');
-                                $('#post_table').DataTable().ajax.reload();
-                                $('#formModal').modal('hide');
-                            }
-                            $('#form_result').html(html);
-                        }
-                    });
-                }
-            });
-
-            $(document).on('click', '.edit', function(){
-                var id = $(this).attr('id');
-                console.log(id);
-                $('#form_result').html('');
-                $.ajax({
-                    url:"blogs/"+id+"/edit",
-                    dataType:"json",
-                    success:function(html){
-                        $('#post_tittle').val(html.data.post_tittle);
-                        $('#post_descripition').val(html.data.post_descripition);
-                        $('#store_image').html("<img src={{ URL::to('/') }}/image/" + html.data.post_photo + " width='70' class='img-thumbnail' />");
-                        $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.post_photo+"' />");
-                        $('#hidden_id').val(html.data.id);
-                        $('.modal-title').text("Edit New Post");
-                        $('#action_button').val("Edit");
-                        $('#action').val("Edit");
-                        $('#formModal').modal('show');
-                    }
-                })
-            });
-
-            var user_id;
 
             $(document).on('click', '.delete', function(){
                 user_id = $(this).attr('id');
@@ -278,7 +150,25 @@
                 })
             });
 
+            function getStatus(published_at){
+
+                if(published_at){
+
+                    return '<span  class="label label-Success "> published</span>';
+
+                }else{
+                    return '<span  class="label label-info"> Draft</span>'
+
+
+                }
+
+            }
+
         });
+
+
+
+
     </script>
 
 @stop

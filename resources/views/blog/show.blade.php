@@ -18,8 +18,13 @@
                                 <ul class="post-meta-group">
                                     <li><i class="fa fa-user"></i><a href="#">{{ @ $blogs->user->name}}</a></li>
                                     <li><i class="fa fa-clock-o"></i><time> {{ date('F d, Y',  strtotime($blogs->created_at)) }}</time></li>
-                                    <li><i class="fa fa-tags"></i><a href="#"> Blog</a></li>
-                                    <li><i class="fa fa-comments"></i><a href="#">4 Comments</a></li>
+                                    <li><i class="fa fa-folder"></i><a href="#">{{ @ $blogs->category->title}}</a></li>
+                                    <li><i class="fa fa-tags"></i>
+                                        @foreach($blogs->tags as $tag)
+                                        <a href="{{route('tag',$tag->second_name)}}">{{$tag->name}}</a>,
+                                            @endforeach
+                                    </li>
+                                    <li><i class="fa fa-comments"></i><a href="#post-comments">{{$blogs->commentsNumber('Comment')}}</a></li>
                                 </ul>
                             </div>
 
@@ -39,7 +44,7 @@
                             <div class="post-author-count">
                                 <a href="#">
                                     <i class="fa fa-clone"></i>
-                                    90 posts
+                                    {{$blogs->user->blogs->count()}} posts
                                 </a>
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ad aut sunt cum, mollitia excepturi neque sint magnam minus aliquam, voluptatem, labore quis praesentium eum quae dolorum temporibus consequuntur! Non.</p>
@@ -47,92 +52,42 @@
                     </div>
                 </article>
 
-                <article class="post-comments">
-                    <h3><i class="fa fa-comments"></i> 5 Comments</h3>
+                <article class="post-comments"id ="post-comments">
+                    <h3><i class="fa fa-comments"></i> {{$blogs->commentsNumber('Comment')}}</h3>
 
                     <div class="comment-body padding-10">
                         <ul class="comments-list">
+                          @foreach($blogs->comments as $comment)
                             <li class="comment-item">
                                 <div class="comment-heading clearfix">
                                     <div class="comment-author-meta">
-                                        <h4>John Doe <small>January 14, 2016</small></h4>
+                                        <h4>{{$comment->user_name}}    <small>{{$comment->created_at->diffForHumans()}}</small></h4>
                                     </div>
                                 </div>
                                 <div class="comment-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio nesciunt nulla est, atque ratione nostrum cumque ducimus maxime, amet enim tempore ipsam. Id ea, veniam ipsam perspiciatis assumenda magnam doloribus!</p>
-                                    <p>Quibusdam iusto culpa, necessitatibus, libero sequi quae commodi ea ab non facilis enim vitae inventore laborum hic unde esse debitis. Adipisci nostrum reprehenderit explicabo, non molestias aliquid quibusdam tempore. Vel.</p>
+                                    {{$comment->comment}}
                                 </div>
                             </li>
-
-                            <li class="comment-item">
-                                <div class="comment-heading clearfix">
-                                    <div class="comment-author-meta">
-                                        <h4>John Doe <small>January 14, 2016</small></h4>
-                                    </div>
-                                </div>
-                                <div class="comment-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio nesciunt nulla est, atque ratione nostrum cumque ducimus maxime, amet enim tempore ipsam. Id ea, veniam ipsam perspiciatis assumenda magnam doloribus!</p>
-                                    <p>Quibusdam iusto culpa, necessitatibus, libero sequi quae commodi ea ab non facilis enim vitae inventore laborum hic unde esse debitis. Adipisci nostrum reprehenderit explicabo, non molestias aliquid quibusdam tempore. Vel.</p>
-
-                                    <ul class="comments-list-children">
-                                        <li class="comment-item">
-                                            <div class="comment-heading clearfix">
-                                                <div class="comment-author-meta">
-                                                    <h4>John Doe <small>January 14, 2016</small></h4>
-                                                </div>
-                                            </div>
-                                            <div class="comment-content">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio nesciunt nulla est, atque ratione nostrum cumque ducimus maxime, amet enim tempore ipsam. Id ea, veniam ipsam perspiciatis assumenda magnam doloribus!</p>
-                                                <p>Quibusdam iusto culpa, necessitatibus, libero sequi quae commodi ea ab non facilis enim vitae inventore laborum hic unde esse debitis. Adipisci nostrum reprehenderit explicabo, non molestias aliquid quibusdam tempore. Vel.</p>
-                                            </div>
-                                        </li>
-
-                                        <li class="comment-item">
-                                            <div class="comment-heading clearfix">
-                                                <div class="comment-author-meta">
-                                                    <h4>John Doe <small>January 14, 2016</small></h4>
-                                                </div>
-                                            </div>
-                                            <div class="comment-content">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio nesciunt nulla est, atque ratione nostrum cumque ducimus maxime, amet enim tempore ipsam. Id ea, veniam ipsam perspiciatis assumenda magnam doloribus!</p>
-                                                <p>Quibusdam iusto culpa, necessitatibus, libero sequi quae commodi ea ab non facilis enim vitae inventore laborum hic unde esse debitis. Adipisci nostrum reprehenderit explicabo, non molestias aliquid quibusdam tempore. Vel.</p>
-
-                                                <ul class="comments-list-children">
-                                                    <li class="comment-item">
-                                                        <div class="comment-heading clearfix">
-                                                            <div class="comment-author-meta">
-                                                                <h4>John Doe <small>January 14, 2016</small></h4>
-                                                            </div>
-                                                        </div>
-                                                        <div class="comment-content">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio nesciunt nulla est, atque ratione nostrum cumque ducimus maxime, amet enim tempore ipsam. Id ea, veniam ipsam perspiciatis assumenda magnam doloribus!</p>
-                                                            <p>Quibusdam iusto culpa, necessitatibus, libero sequi quae commodi ea ab non facilis enim vitae inventore laborum hic unde esse debitis. Adipisci nostrum reprehenderit explicabo, non molestias aliquid quibusdam tempore. Vel.</p>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                      @endforeach
                         </ul>
 
                     </div>
 
                     <div class="comment-footer padding-10">
                         <h3>Leave a comment</h3>
-                        <form>
+                        <form method="post" action="{{ route('blogs.comments',$blogs->id) }}">
+                            @csrf
                             <div class="form-group required">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control">
+                                <input type="text" name="user_name" id="user_name" class="form-control">
                             </div>
                             <div class="form-group required">
                                 <label for="email">Email</label>
-                                <input type="text" name="email" id="email" class="form-control">
+                                <input type="text" name="user_email" id="user_email" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="website">Website</label>
-                                <input type="text" name="website" id="website" class="form-control">
+                                <input type="text" name="user_url" id="user_url" class="form-control">
                             </div>
                             <div class="form-group required">
                                 <label for="comment">Comment</label>

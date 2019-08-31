@@ -52,11 +52,13 @@
                         <input checked="checked" name="state" type="checkbox"/>
                         <label for="checkbox">State:</label>
                     </div>
+                        <div>
                     <label for="Photo">User Photo :</label>
                     <input type="file" class="form-control" name="user_photo"/>
-        </div>
+                      </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-danger">Add User </button>
+                    </div>
                 </form>
         </div>
     </div>

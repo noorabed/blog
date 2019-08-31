@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
@@ -21,7 +22,10 @@ class UserController extends Controller
     }
     public function view()
     {
+
         $users =User::all();
+        $roles =Role::all();
+       //dd($users,$roles);
         if(request()->ajax())
         {
             return datatables()->of(User::latest()->get())
@@ -37,7 +41,7 @@ class UserController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('user.view',compact('users'));
+        return view('user.view',compact('users','roles'));
     }
     public function store(Request $request)
     {
@@ -62,14 +66,14 @@ class UserController extends Controller
 
         $image->move(public_path('image'), $new_name);
 
-
         $form_data = array(
             'name'        =>  $request->name,
             'email'         =>  $request->email,
             'password' => bcrypt($request->password),
+            'role_id'          =>$request->role_id,
             'user_photo' =>  $new_name
         );
-            //dd($form_data);
+           // dd($form_data);
        User::create($form_data);
 
         return response()->json(['success' => 'Data Added successfully.']);
@@ -77,10 +81,15 @@ class UserController extends Controller
     }
     public function edit($id)
     {
+        $roles=Role::all();
         if(request()->ajax())
         {
-            $data = User::findOrFail($id);
-            return response()->json(['data' => $data]);}
+
+        $data = User::findOrFail($id);
+      //  return response()->json(['data' => $user,'roles'=>$roles,'role_id'=>$user->roles()->first()->id]);
+        return response()->json(['data' => $data]);
+        }
+
     }
     public function update(Request $request)
     {
@@ -119,10 +128,13 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'role_id'         =>$request->role_id,
             'user_photo' => $image_name
         );
 
-        User::whereId($request->hidden_id)->update($form_data);
+         $users=User::whereId($request->hidden_id)->update($form_data);
+      //User::find($request->hidden_id)->roles()->sync($request->id);
+
         return response()->json(['success' => 'Data is successfully updated']);
     }
 
@@ -150,4 +162,12 @@ class UserController extends Controller
        return response()->json(['success' => 'json Changed successfully.']);
 
     }
+
+
+    public function setting(){
+        return view('user.settings');
+
+    }
+
+
 }

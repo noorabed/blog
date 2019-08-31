@@ -1,9 +1,4 @@
-@extends('adminlte::page')
-
-@section('title', 'AdminLTE')
-
-@section('content_header')
-@stop
+@extends('dashboard_layouts/master')
 
 @section('content')
     <!-- Main content -->
@@ -16,7 +11,7 @@
                 <div class="box box-primary">
 
                     <div class="box-body box-profile"  >
-                        <img class="profile-user-img img-responsive img-circle" src="http://localhost/NOOR/blog/storage/app/avatars/{{Auth::user()->user_photo}}" alt="User profile picture">
+                        <img class="profile-user-img img-responsive img-circle" src="{{asset('image/'.auth()->user()->user_photo)}}" alt="User profile picture">
 
                         <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
                     </div>

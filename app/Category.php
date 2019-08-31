@@ -21,4 +21,11 @@ class Category extends Model
     {
         return $this->hasMany('App\Blog');
     }
+
+
+    public function getRouteKeyName()
+
+    {
+        return 'slug';
+    }
 }

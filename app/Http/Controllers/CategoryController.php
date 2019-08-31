@@ -38,6 +38,7 @@ class CategoryController extends Controller
     {
         $rules =array(
             'title' => 'required',
+            'slug' => 'required',
         );
         $error = Validator::make($request->all(), $rules);
 
@@ -47,7 +48,8 @@ class CategoryController extends Controller
         }
         $category = new Category;
         $category->title = $request->get('title');
-        $category->user()->associate(auth()->id());
+        $category->slug = $request->get('slug');
+        //$category->user()->associate(auth()->id());
         $category->save();
 
         return response()->json(['success' => 'Data Added successfully.']);
@@ -65,6 +67,7 @@ class CategoryController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
+            'slug' => 'required',
         ]);
        // dd($request->all());
         Category::whereId($request->hidden_id)->update($validated);

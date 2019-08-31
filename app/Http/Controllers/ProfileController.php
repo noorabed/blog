@@ -47,6 +47,7 @@ class ProfileController extends Controller
             }
             if($request->hasFile('user_photo')){
 
+
                 /*$request->validate([
 
                     'user_photo' =>  'mimes:png',
@@ -54,9 +55,9 @@ class ProfileController extends Controller
                 //$file = $request->user_photo;
                // dd($file->getClientOriginalExtension());
                 //dd(request()->user_photo->getClientOriginalExtension());
-                $profileName = $user->id.'_avatar'.time().'.'.request()->user_photo->getClientOriginalExtension();
 
-                $request->user_photo->storeAs('avatars',$profileName);
+                $profileName =  rand() . '.' .request()->user_photo->getClientOriginalExtension();
+                $request->user_photo-> move(public_path('image'), $profileName);
                 $user->user_photo = $profileName;
             }
 

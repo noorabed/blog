@@ -1,15 +1,12 @@
-@extends('adminlte::page')
-
-@section('title', 'AdminLTE')
-
-@section('content_header')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-@stop
+@extends('dashboard_layouts/master')
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 @section('content')
    {{-- <style>
@@ -69,6 +66,9 @@
                     {!!$categories->links(); !!}
                 </div>
                 <div>--}}
+
+
+   <br>
    <div align="right">
        <button type="button" name="create_category" id="create_category" class="btn btn-success btn-sm">Create Category</button>
    </div>
@@ -77,8 +77,10 @@
        <table class="table table-bordered table-striped" id="category_table">
            <thead>
            <tr>
-               <td width="45%">Tittle</td>
-               <td width="45%">Action</td>
+               <td width="10%">ID</td>
+               <td width="30%">Tittle</td>
+               <td width="30%">Slug</td>
+               <td width="30%">Action</td>
            </tr>
            </thead>
        </table>
@@ -102,6 +104,12 @@
                            <label class="control-label col-md-4">Tittle : </label>
                            <div class="col-md-8">
                                <input type="text" name="title" id="title" class="form-control" />
+                           </div>
+                       </div>
+                       <div class="form-group">
+                           <label class="control-label col-md-4">Slug : </label>
+                           <div class="col-md-8">
+                               <input type="text" name="slug" id="slug" class="form-control" />
                            </div>
                        </div>
 
@@ -144,10 +152,18 @@
                    url: "{{ route('categories.index') }}",
                },
                columns:[
+                   {
+                       data: 'id',
+                       name: 'id'
+                   },
 
                    {
                        data: 'title',
                        name: 'title'
+                   },
+                   {
+                       data: 'slug',
+                       name: 'slug'
                    },
                    {
                        data: 'action',
@@ -162,10 +178,12 @@
                $('#action_button').val("Add");
                $('#action').val("Add");
                $('#formModal').modal('show');
+               $('#hidden_id').val(html.data.id);
            });
 
            $('#sample_form').on('submit', function(event){
                event.preventDefault();
+
                if($('#action').val() == 'Add')
                {
                    $.ajax({

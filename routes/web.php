@@ -33,7 +33,7 @@ Route::get('/category/create', 'CategoryController@create')->name('category.crea
 //Route::get('/category/editcategory', 'CategoryController@editcategory');
 //post
 Route::resource('blogs', 'BlogController');
-Route::post('blogs/update', 'BlogController@update')->name('blogs.update');
+Route::post('blogs/update/{id}', 'BlogController@update')->name('blogs.update');
 Route::get('blogs/destroy/{id}', 'BlogController@destroy');
 //user
 Route::resource('users', 'UserController');
@@ -44,7 +44,6 @@ Route::get('changestate/{id}','UserController@changestate')->name('users.changes
 Route::resource('category/categories', 'CategoryController');
 Route::get('/category/categorylist', 'CategoryController@index')->name('categories.index');
 Route::post('/category/categories/update', 'CategoryController@update')->name('categories.update');
-Route::get('/category/categories/store', 'CategoryController@store')->name('category.store');
 Route::get('/category/categories/destroy/{id}', 'CategoryController@destroy');
 Auth::routes();
 //profile
@@ -54,4 +53,24 @@ Route::post('user/profile/update', 'ProfileController@update')->name('user.updat
 Route::get('index', 'BlogController@show')->name('blogs.show');
 Route::get('blog/show/{id}', 'BlogController@view')->name('blogs.view');
 Route::get('/category/{category}','BlogController@category')->name('category');
-Route::get('/popular/{popular}','BlogController@popular')->name('popular');
+//comment
+Route::resource('comments', 'CommentController');
+Route::post('/blog/{post}/comments', 'CommentController@store')->name('blogs.comments');
+Route::get('comments/destroy/{id}', 'CommentController@destroy')->name('comments.dertroy');
+//tags
+Route::get('/tag/{tag}','BlogController@tag')->name('tag');
+Route::get('user/setting', 'UserController@setting')->name('user.setting');
+
+
+//role
+Route::resource('roles', 'RoleController');
+Route::post('/user/roles/update{id}', 'RoleController@update')->name('roles.update');
+Route::get('roles/destroy/{id}', 'RoleController@destroy');
+//permission
+Route::resource('permissions', 'PermissionController');
+Route::post('/user/permissions/update', 'PermissionController@update')->name('permissions.update');
+Route::get('permissions/destroy/{id}', 'PermissionController@destroy');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+//
+

@@ -29,6 +29,7 @@ class CommentsTableSeeder extends Seeder
                     'blog_id'=> $blog->id,
                     'created_at'=>$commentDate,
                     'updated_at'=>$commentDate,
+                    //'user_id'->$user->id,
 
                 ];
             }

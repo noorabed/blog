@@ -2,10 +2,12 @@
 
 namespace App;
 
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+
 
 class User extends Authenticatable
 {
@@ -18,7 +20,7 @@ class User extends Authenticatable
      */
     //protected $guarded=[];
     protected $fillable = [
-        'name', 'email', 'password','state','user_photo'
+        'name', 'email', 'password', 'state', 'user_photo','role_id'
     ];
 
     /**
@@ -42,5 +44,16 @@ class User extends Authenticatable
     public function blogs()
     {
         return $this->hasMany('App\Blog');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+    public function roles()
+    {
+        return $this->belongsTo('App\Role');
+
     }
 }

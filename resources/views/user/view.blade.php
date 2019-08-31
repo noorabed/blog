@@ -1,31 +1,44 @@
-@extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@extends('dashboard_layouts/master')
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-@section('content_header')
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-@stop
 @push('style')
     <style>
 
     </style>
 @endpush
 @section('content')
-    <div align="right">
-        {{--  <a href="{{ route('users.create') }}" class="btn btn-primary">ADD User</a>--}}
-        <button type="button" name="add_user" id="add_user" class="btn btn-success btn-sm">Add User</button>
-    </div>
+    <section class="content-header">
+        <h1>
+            User
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active">user</li>
+        </ol>
+    </section>
+    <br>
+
     <br />
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped" id="user_table">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div align="right">
+
+                        {{--  <a href="{{ route('users.create') }}" class="btn btn-primary">ADD User</a>--}}
+                        <button type="button" name="add_user" id="add_user" class="btn btn-success btn-sm">Add User</button>
+                    </div>
+                    <br />
+        <table class="table table-bordered" id="user_table">
             <thead>
             <tr>
                 <th width="10%">User photo</th>
@@ -86,13 +99,23 @@
                         <div class="form-group">
                             <label class="control-label col-md-4">Password : </label>
                             <div class="col-md-8">
-                                <input type="password" name="password" id="password" class="form-control" />
+                                <input type="password" name="password" id="password"  class="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-4">State : </label>
                             <div class="col-md-8">
-                                <input checked="checked" name="state" type="checkbox"/>
+                                <input checked="checked" name="state" type="checkbox" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-4">Role :</label>
+                            <div class="col-md-8">
+                            <select  class="form-control" name="role_id" id="role_id">
+                               @foreach($roles as $role)
+                                <option  name="role" value="{{$role->id}}"> {{$role->name}}</option>
+                                @endforeach
+                            </select>
                             </div>
                         </div>
                         <div class="form-group">
@@ -130,7 +153,12 @@
             </div>
         </div>
     </div>
-    @push('script')
+
+            </div>
+        </div>
+
+    </div>
+    @push('scripts')
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @endpush
     <script>
@@ -261,6 +289,7 @@
                     success:function(html){
                         $('#name').val(html.data.name);
                         $('#email').val(html.data.email);
+                        $('#role_id').val(html.data.role_id);
                         $('#store_image').html("<img src={{ URL::to('/') }}/image/" + html.data.user_photo + " width='70' class='img-thumbnail' />");
                         $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.user_photo+"' />");
                         $('#hidden_id').val(html.data.id);
@@ -297,7 +326,7 @@
 
         });
 
-      function static(e) {
+        function static(e) {
             id = $(e).data('id');
             var action = 'changestate';
             $('#message').html('');
@@ -311,18 +340,18 @@
                 .then((willDelete) => {
                     if (willDelete) {
                         $.ajax({
-                                     url:"changestate/"+id,
-                                     method:'GET',
-                                     success:function(data)
-                                     {
-                                         swal("Poof! Your State has been changed!", {
-                                             icon: "success",
-                                         });
-                                         setTimeout(function(){
-                                             $('#user_table').DataTable().ajax.reload();
-                                         });
-                                     }
-                              });
+                            url:"changestate/"+id,
+                            method:'GET',
+                            success:function(data)
+                            {
+                                swal("Poof! Your State has been changed!", {
+                                    icon: "success",
+                                });
+                                setTimeout(function(){
+                                    $('#user_table').DataTable().ajax.reload();
+                                });
+                            }
+                        });
 
                     } else {
                         swal("No any Change with your State!");

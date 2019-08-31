@@ -5,41 +5,41 @@ use App\Http\Requests;
 use App\Blog;
 use App\User;
 use App\Category;
+use App\Tag;
 use DB;
+use function Sodium\compare;
 use Validator;
 use Redirect;
 
 class BlogController extends Controller
 {
-
-
    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
+    protected $limit =3;
     public function index()
     {
-
+        $blogs = Blog::all();
         $categories = Category::all();
         if(request()->ajax())
         {
             return datatables()->of(Blog::latest()->get())
                 ->addColumn('action', function($data){
-                    $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
+                    $button = '<a href="'. route('blogs.edit',$data->id) .'" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</a>';
                     $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
                     $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
                     return $button;
 
                 }) ->addColumn('post_descripition', function($data){
-                    $string_limit= str_limit($data->post_descripition,100);
+                    $string_limit= str_limit($data->post_descripition,50);
                    return $string_limit ;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
         }
-        return view('post.index',compact('categories'));
+        return view('post.index',compact('blogs','categories'));
 
 
 
@@ -52,8 +52,9 @@ class BlogController extends Controller
      */
     public function create()
     {
+        $tags=Tag::all();
         $categories = Category::all();
-        return view('post.create',compact('categories'));
+        return view('post.create',compact('blogs','categories','tags'));
     }
 
     /**
@@ -64,18 +65,20 @@ class BlogController extends Controller
      */
 
 
-
     public function store(Request $request)
     {
-        //dd($request->all());
+
+        // $tags = explode(',',$request->post_tags);
+      //  dd($tags);
         $rules = array(
-            'post_tittle'    =>  'required',
-            'post_descripition'     =>  'required',
-            'post_photo'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'post_tittle'        =>  'required',
+            'slug'               =>  'required|unique:blogs',
+            'post_descripition'  =>  'required',
+            'category_id'         => 'required',
+       );
 
-        );
 
-        $error = Validator::make($request->all(), $rules);
+      $error = Validator::make($request->all(), $rules);
 
         if($error->fails())
         {
@@ -87,22 +90,41 @@ class BlogController extends Controller
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
 
         $image->move(public_path('image'), $new_name);
-               $form_data = array(
+      $form_data = array(
             'post_tittle'        =>  $request->post_tittle,
-            'post_descripition'         =>  $request->post_descripition,
-            'post_photo'             =>  $new_name,
-            'user_id'   =>auth()->id(),
-             'view_count'        => rand(1,10)*10,
-              'category_id'        =>$request->category,
+            'slug'               =>$request->slug,
+            'excerpt'               =>$request->excerpt,
+            'post_descripition'  =>  $request->post_descripition,
+            'post_photo'         =>  $new_name,
+            'user_id'            =>auth()->id(),
+            'view_count'         => rand(1,10)*10,
+            'category_id'          =>$request->category_id,
+            'published_at'        =>  $request->published_at,
+
         );
-        //dd($form_data);
+       $create= Blog::create($form_data);
+      if($create)
+      {
+          $tagNames = explode(',',$request->get('post_tags'));
+          $tagIds = [];
+          foreach($tagNames as $tagName)
+          {
 
-        $create= Blog::create($form_data);
-        //$category = Category::all();
-        //$create->categories()->attach($category);
-        session()->flash('suceess', 'Task was successful!');
+              $tag = Tag::firstOrCreate([
+                  'name'=>$tagName,
+                  'second_name'=>$tagName
+              ]);
+              if($tag)
+              {
+                  $tagIds[] = $tag->id;
+              }
 
-        return response()->json(['success' => 'Data Added successfully.']);
+          }
+          $create->tags()->sync($tagIds);
+      }
+
+        return redirect('/blogs')->with('success', 'Blog Added successfully.');
+
     }
 
     /**
@@ -120,12 +142,10 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        if(request()->ajax())
-        {
-            $data = Blog::find($id);
-            return response()->json(['data' => $data]);
-        }
 
+            $data = Blog::find($id);
+            $categories=Category::all();
+            return view('post.edit',compact('data','categories'));
 
     }
 
@@ -136,15 +156,17 @@ class BlogController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id )
     {
-      // dd($request->all());
+
+      //dd($request->all());
         $image_name = $request->hidden_image;
         $image = $request->file('post_photo');
         if($image != '')
         {
             $rules = array(
                 'post_tittle'    =>  'required',
+                'slug'               =>  'required|unique:blogs',
                 'post_descripition'     =>  'required',
                 'post_photo'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             );
@@ -161,8 +183,9 @@ class BlogController extends Controller
         {
             $rules = array(
                 'post_tittle'    =>  'required',
+                'slug'               =>  'required|unique:blogs',
                 'post_descripition'     =>  'required'
-        );
+            );
 
             $error = Validator::make($request->all(), $rules);
 
@@ -176,53 +199,94 @@ class BlogController extends Controller
         $form_data = array(
             'post_tittle'      =>   $request->post_tittle,
             'post_descripition'        =>   $request->post_descripition,
-            'post_photo'            =>   $image_name
+            'published_at'        =>  $request->published_at,
+            'post_photo'            =>   $image_name,
+            'slug'               =>$request->slug,
+            'excerpt'               =>$request->excerpt,
         );
 
-        Blog::whereId($request->hidden_id)->update($form_data);
-        return response()->json(['success' => 'Data is successfully updated']);
+        $update=Blog::whereId($id)->update($form_data);
+
+        if($update)
+        {
+            $tagNames = explode(',',$request->get('post_tags'));
+            $tagIds = [];
+            foreach($tagNames as $tagName)
+            {
+
+                $tag = Tag::where([
+                    'name'=>$tagName,
+                    'second_name'=>$tagName
+                ]);
+                if($tag)
+                {
+                    $tagIds[] = $tag->id;
+                }
+
+            }
+            $update->tags()->sync($tagIds);
+        }
+
+        return redirect('/blogs')->with('success', 'Blog edit successfully.');
+
 
     }
 
      public function show(){
+
+         $tags=Tag::all();
         $categories = Category::with('posts')
             ->orderBy('title','asc')
             ->get();
 
-        $blogs=Blog::with('user')
+        $blogs=Blog::with('user','comments')
             ->latest()
-            ->get();
+           ->LatestFirst()->published();
+        // check
+        // dd($blogs);
+         if ($term=request('term')){
+             $blogs->where('post_tittle','LIKE',"%{$term}%");
+         }
+         $blogs=$blogs->simplePaginate($this->limit);
 
-        return view('blog.index',compact('blogs', 'categories'));
+
+        return view('blog.index',compact('blogs', 'categories','tags'));
     }
 
         public function view($id){
-
-        $categories = Category::orderBy('title','asc') ->get();
+            $tags=Tag::all();
+        //$categories = Category::orderBy('title','asc') ->get();
         $blogs=Blog::findOrFail($id);
-
-        return view('blog.show',compact('blogs', 'categories'));
+        return view('blog.show',compact('blogs', 'tags'));
     }
 
-    public function category($id){
+    public function category( Category $category){
+        $tags=Tag::all();
         $categories = Category::with('posts')
             ->orderBy('title','asc')
             ->get();
 
-        $blogs=Blog::with('user')
+        $blogs=$category->posts()
+            ->with('user')
             ->latest()
-            ->where('category_id',$id)
+            ->simplePaginate($this->limit);
+         //   ->get();
+        //dd($blogs,$categories);
+        return view('blog.index',compact('blogs', 'categories','tags'));
+    }
+    public function tag(Tag $tag){
+        $tags=Tag::all();
+        $categories = Category::orderBy('title','asc') ->get();
+        $blogs=$tag->blogs()
+            ->with('user')
+            ->latest()
             ->get();
         //dd($blogs,$categories);
-        return view('blog.index',compact('blogs', 'categories'));}
+        return view('blog.index',compact('blogs', 'tags','categories'));
+    }
 
-   /** public function popular(){
 
-        $blogs=Blog::orderBy('view_count')->get();
 
-        return view('blog.show',compact('blogs'));
-    }*/
-    
     /**
      * Remove the specified resource from storage.
      *
@@ -233,5 +297,18 @@ class BlogController extends Controller
     {
         $data = Blog::findOrFail($id);
         $data->delete();
+    }
+
+    public function gate()
+    {
+        $blogs = Blog::find(1);
+
+        if (Gate::allows('update-post', $blogs)) {
+            echo 'Allowed';
+        } else {
+            echo 'Not Allowed';
+        }
+
+        exit;
     }
 }
