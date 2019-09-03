@@ -2,24 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
+use App\Policies\BlogPolicy;
+use App\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Category;
 use App\User;
 use Validator;
 
 class CategoryController extends Controller
 {
+
     public function index()
     {
+        $user=auth()->user();
         $categories = Category::all();
         if(request()->ajax())
         {
             return datatables()->of(Category::latest()->get())
                 ->addColumn('action', function($data){
                     $button = '&nbsp;&nbsp;&nbsp;&nbsp;';
-                    $button .= '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
+                    if (\Gate::allows('blogs.editcategory')) {
+                        $button .= '<button type="button" name="edit" id="' . $data->id . '" class="edit btn btn-primary btn-sm">Edit</button>';
+                    }
                     $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
-                    $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
+                    if (\Gate::allows('blogs.deletecategory')) {
+                        $button .= '<button type="button" name="delete" id="' . $data->id . '" class="delete btn btn-danger btn-sm">Delete</button>';
+                    }
                     return $button;
                 })
                 ->rawColumns(['action'])
@@ -27,6 +37,7 @@ class CategoryController extends Controller
         }
 
         return view('category.categorylist', compact('categories'));
+
     }
 
     public function create()
@@ -79,5 +90,17 @@ class CategoryController extends Controller
         $data = Category::find($id);
         $data->delete();
 
+    }
+
+
+    function test( User $user){
+        $user_role = Role::find($user->role_id);
+        $role_permissions = $user_role->permissions;
+        foreach ($role_permissions as $permission) {
+            if ($permission->id ==6) {
+                return true;
+            }
+        }
+        return false;
     }
 }

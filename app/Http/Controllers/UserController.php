@@ -8,6 +8,7 @@ use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Html\HtmlServiceProvider;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use Validator;
 class UserController extends Controller
@@ -33,9 +34,13 @@ class UserController extends Controller
                    // $button = ' <input type="checkbox" name="state" data-id="'.$data->id.'" onclick="static(this)" class="toggle-class" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" />';
                     $button = '<button type="button" name="state" data-id="'.$data->id.'" onclick="static(this)" class="state btn btn-default btn-sm">Change State</button>';
                     $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
-                    $button .= '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
+                    if (\Gate::allows('users.update')) {
+                        $button .= '<button type="button" name="edit" id="' . $data->id . '" class="edit btn btn-primary btn-sm">Edit</button>';
+                    }
                     $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
-                    $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
+                    if (\Gate::allows('users.delete')) {
+                        $button .= '<button type="button" name="delete" id="' . $data->id . '" class="delete btn btn-danger btn-sm">Delete</button>';
+                    }
                     return $button;
                 })
                 ->rawColumns(['action'])
@@ -81,7 +86,8 @@ class UserController extends Controller
     }
     public function edit($id)
     {
-        $roles=Role::all();
+        $user = Auth::user();
+        if ($user->can('users.update', Blog::class)) {
         if(request()->ajax())
         {
 
@@ -89,6 +95,10 @@ class UserController extends Controller
       //  return response()->json(['data' => $user,'roles'=>$roles,'role_id'=>$user->roles()->first()->id]);
         return response()->json(['data' => $data]);
         }
+        } else {
+            echo 'Not Authorized';
+        }
+        exit;
 
     }
     public function update(Request $request)
@@ -164,10 +174,6 @@ class UserController extends Controller
     }
 
 
-    public function setting(){
-        return view('user.settings');
-
-    }
 
 
 }

@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-
 //user1
 //Route::post('users/update', 'UserController@update')->name('users.update');
 //Route::get('/user/edituser', 'UserController@edituser');
@@ -47,7 +46,7 @@ Route::post('/category/categories/update', 'CategoryController@update')->name('c
 Route::get('/category/categories/destroy/{id}', 'CategoryController@destroy');
 Auth::routes();
 //profile
-Route::resource('user/profile', 'ProfileController');
+Route::resource('profile', 'ProfileController');
 Route::post('user/profile/update', 'ProfileController@update')->name('user.update');
 //blog frontend
 Route::get('index', 'BlogController@show')->name('blogs.show');
@@ -59,7 +58,6 @@ Route::post('/blog/{post}/comments', 'CommentController@store')->name('blogs.com
 Route::get('comments/destroy/{id}', 'CommentController@destroy')->name('comments.dertroy');
 //tags
 Route::get('/tag/{tag}','BlogController@tag')->name('tag');
-Route::get('user/setting', 'UserController@setting')->name('user.setting');
 
 
 //role
@@ -72,5 +70,10 @@ Route::post('/user/permissions/update', 'PermissionController@update')->name('pe
 Route::get('permissions/destroy/{id}', 'PermissionController@destroy');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-//
+Route::resource('settings', 'SettingController');
+Route::post('settings/update/{id}', 'SettingController@update')->name('settings.update');
+
+
+Route::resource('tags', 'TagController');
+Route::get('tags/destroy/{id}', 'TagController@destroy')->name('tags.dertroy');
 

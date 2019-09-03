@@ -70,7 +70,9 @@
 
    <br>
    <div align="right">
+       @can('blogs.category',Auth::user())
        <button type="button" name="create_category" id="create_category" class="btn btn-success btn-sm">Create Category</button>
+       @endcan
    </div>
    <br />
    <div class="table-responsive">

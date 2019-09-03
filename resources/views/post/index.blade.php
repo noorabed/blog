@@ -42,6 +42,7 @@
                 <th width="20%">Date</th>
                 <th width="20%">Action</th>
 
+
             </tr>
             </thead>
         </table>
@@ -140,6 +141,7 @@
                     beforeSend:function(){
                         $('#ok_button').text('Deleting...');
                     },
+
                     success:function(data)
                     {
                         setTimeout(function(){
@@ -150,14 +152,16 @@
                 })
             });
 
+
             function getStatus(published_at){
 
                 if(published_at){
 
                     return '<span  class="label label-Success "> published</span>';
 
-                }else{
-                    return '<span  class="label label-info"> Draft</span>'
+                }
+                else{
+                    return '<span  class="label label-info"> Draft</span>';
 
 
                 }

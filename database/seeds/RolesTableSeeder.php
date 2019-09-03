@@ -22,5 +22,8 @@ class RolesTableSeeder extends Seeder
         $editor = Role::create([
             'name' => 'Editor',
         ]);
+        $writer = Role::create([
+            'name' => 'Writer',
+        ]);
     }
 }

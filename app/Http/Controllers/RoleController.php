@@ -53,7 +53,7 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $rules =array(
-            'name' => 'required|unique:roles',
+            'name' => 'required',
         );
         $error = Validator::make($request->all(), $rules);
 
@@ -104,7 +104,7 @@ class RoleController extends Controller
     {
         //return $request->all();
         $rules =array(
-            'name' => 'required|unique:roles',
+            'name' => 'required',
         );
         $error = Validator::make($request->all(), $rules);
 

@@ -75,7 +75,58 @@
                                                 </td>
                                         @endforeach
                                     </tr>
-
+                                    <tr>
+                                        <td>Categories</td>
+                                        @foreach($permissions as $permission )
+                                            @if($permission->for =='category')
+                                                <td>
+                                                    <label>
+                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}">
+                                                        {{$permission->name}}
+                                                    </label>
+                                                    @endif
+                                                </td>
+                                                @endforeach
+                                    </tr>
+                                    <tr>
+                                        <td>Tags</td>
+                                        @foreach($permissions as $permission )
+                                            @if($permission->for =='tag')
+                                                <td>
+                                                    <label>
+                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}">
+                                                        {{$permission->name}}
+                                                    </label>
+                                                    @endif
+                                                </td>
+                                                @endforeach
+                                    </tr>
+                                    <tr>
+                                    <td>Users</td>
+                                    @foreach($permissions as $permission )
+                                        @if($permission->for =='user')
+                                            <td>
+                                                <label>
+                                                    <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}">
+                                                    {{$permission->name}}
+                                                </label>
+                                                @endif
+                                            </td>
+                                            @endforeach
+                                            </tr>
+                                    <tr>
+                                    <td>Settings</td>
+                                    @foreach($permissions as $permission )
+                                        @if($permission->for =='setting')
+                                            <td>
+                                                <label>
+                                                    <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}">
+                                                    {{$permission->name}}
+                                                </label>
+                                                @endif
+                                            </td>
+                                            @endforeach
+                                            </tr>
                                     </tbody>
                                 </table>
                             </div>

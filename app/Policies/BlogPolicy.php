@@ -4,6 +4,8 @@ namespace App\Policies;
 
 use App\User;
 use App\Blog;
+use App\Role;
+use App\Category;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BlogPolicy
@@ -28,9 +30,17 @@ class BlogPolicy
      * @param  \App\Blog  $blog
      * @return mixed
      */
-    public function view(User $user, Blog $blog)
+    public function view(User $user)
     {
-        //
+       $user_role = Role::find($user->role_id);
+        $role_permissions = $user_role->permissions;
+        foreach ($role_permissions as $permission) {
+            if ($permission->id ==4) {
+                return true;
+            }
+
+        }
+        return false;
     }
 
     /**
@@ -41,17 +51,31 @@ class BlogPolicy
      */
     public function create(User $user)
     {
-        if (is_array($user)) {
-            foreach ($user->roles as $role) {
+        //user role
+       // dd($user->roles,$user);
+      $user_role = \App\Role::find($user->role_id);
+       // dd( $user_role->permissions);
+        $role_permissions=$user_role->permissions;
+        foreach ($role_permissions as $permission){
+            if ($permission->id == 1) {
+                return true;
+            }
+
+        }
+        return false;
+
+        //user permission role
+ /** if (is_array($user)) {
+            foreach ($user->roles as $role){
                 foreach ($role->permissions as $permission) {
-                    if ($permission->id == 5) {
+                    if ($permission->id == 1) {
                         return true;
                     }
                 }
-            }
-            return false;
         }
-    }
+                return false;
+               }*/
+}
 
     /**
      * Determine whether the user can update the blog.
@@ -60,19 +84,19 @@ class BlogPolicy
      * @param  \App\Blog  $blog
      * @return mixed
      */
-    public function update(User $user, Blog $blog)
+    public function update(User $user)
     {
-        if (is_array($user)) {
-            foreach ($user->roles as $role) {
-                foreach ($role->permissions as $permission) {
-                    if ($permission->id == 2) {
-                        return true;
-                    }
-                }
+        $user_role = \App\Role::find($user->role_id);
+        $role_permissions = $user_role->permissions;
+        foreach ($role_permissions as $permission) {
+            if ($permission->id ==2) {
+                return true;
             }
-            return false;
+
         }
+        return false;
     }
+
 
     /**
      * Determine whether the user can delete the blog.
@@ -81,9 +105,17 @@ class BlogPolicy
      * @param  \App\Blog  $blog
      * @return mixed
      */
-    public function delete(User $user, Blog $blog)
+    public function delete(User $user)
     {
-        //
+        $user_role = Role::find($user->role_id);
+        $role_permissions = $user_role->permissions;
+        foreach ($role_permissions as $permission) {
+            if ($permission->id ==3) {
+                return true;
+            }
+
+        }
+        return false;
     }
 
     /**
@@ -109,4 +141,52 @@ class BlogPolicy
     {
         //
     }
+
+    public function category(User $user)
+    {
+        $user_role = Role::find($user->role_id);
+        $role_permissions = $user_role->permissions;
+        foreach ($role_permissions as $permission) {
+            if ($permission->id ==5) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function editcategory(User $user)
+    {
+        $user_role = Role::find($user->role_id);
+        $role_permissions = $user_role->permissions;
+        foreach ($role_permissions as $permission) {
+            if ($permission->id ==6) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function deletecategory(User $user)
+    {
+        $user_role = Role::find($user->role_id);
+        $role_permissions = $user_role->permissions;
+        foreach ($role_permissions as $permission) {
+            if ($permission->id ==7) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public function deletetag(User $user)
+    {
+        $user_role = Role::find($user->role_id);
+        $role_permissions = $user_role->permissions;
+        foreach ($role_permissions as $permission) {
+            if ($permission->id ==11) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

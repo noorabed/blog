@@ -35,16 +35,19 @@
                     <div align="right">
 
                         {{--  <a href="{{ route('users.create') }}" class="btn btn-primary">ADD User</a>--}}
+                        @can('users.create',Auth::user())
                         <button type="button" name="add_user" id="add_user" class="btn btn-success btn-sm">Add User</button>
+                        @endcan
                     </div>
                     <br />
         <table class="table table-bordered" id="user_table">
             <thead>
             <tr>
                 <th width="10%">User photo</th>
-                <th width="25%">Name</th>
-                <th width="25%">Email</th>
+                <th width="20%">Name</th>
+                <th width="20%">Email</th>
                 <th width="10%">State</th>
+                <th width="10%">User Role</th>
                 <th width="30%">Action</th>
             </tr>
             </thead>
@@ -193,6 +196,14 @@
                         name: 'state'
                     },
                     {
+                        data: 'role_id',
+                        name: 'role_id',
+                        render : function (data,full ) {
+
+                            return getRoles(data)
+                        },
+                    },
+                    {
                         data: 'action',
                         name: 'action',
                         orderable: false
@@ -322,7 +333,27 @@
                     }
                 })
             });
+            function getRoles(role_id ){
+                if(role_id == 1){
 
+                    return '<span  class="label label-danger "> Admin</span>';
+
+                }
+
+                else if(role_id == 2){
+
+                    return '<span  class="label label-warning "> Author</span>';
+
+                }
+              else if (role_id ==3){
+                    return '<span  class="label label-info"> Editor</span>';
+                }
+
+            else{
+                    return '<span  class="label label-success"> Writer</span>';
+
+                }
+            }
 
         });
 

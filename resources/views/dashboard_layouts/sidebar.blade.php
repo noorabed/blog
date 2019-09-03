@@ -28,14 +28,22 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
+                    @can('blogs.view',Auth::user())
                     <li><a href="{{route('blogs.show')}}"><i class="fa fa-circle-o"></i> Blogs</a></li>
-                    <li><a href="{{route('blogs.index')}}"><i class="fa fa-circle-o"></i> All Posts</a></li>
-                    @can('blogs.create',Auth::user())
-                    <li><a href="{{route('blogs.create')}}"><i class="fa fa-circle-o"></i> Add New</a></li>
                     @endcan
+                    @can('blogs.view',Auth::user())
+                    <li><a href="{{route('blogs.index')}}"><i class="fa fa-circle-o"></i> All Posts</a></li>
+                    @endcan
+                  @can('blogs.create',Auth::user())
+                    <li><a href="{{route('blogs.create')}}"><i class="fa fa-circle-o"></i> Add New</a></li>
+                   @endcan
                 </ul>
             </li>
+
             <li><a href="{{route('categories.index')}}"><i class="fa fa-folder"></i> <span>Categories</span></a></li>
+            @can('blogs.deletetag',Auth::user())
+            <li><a href="{{route('tags.index')}}"><i class="fa fa-folder"></i> <span>Tags</span></a></li>
+            @endcan
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-users"></i>
@@ -46,7 +54,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{route('view')}}"><i class="fa fa-circle-o"></i>Users</a></li>
-                    <li><a href="user/profile"><i class="fa fa-circle-o"></i>Users Profile</a></li>
+                    <li><a href="profile"><i class="fa fa-circle-o"></i>Users Profile</a></li>
                     <li><a href="{{route('roles.index')}}"><i class="fa fa-circle-o"></i>Roles</a></li>
                     <li><a href="{{route('permissions.index')}}"><i class="fa fa-circle-o"></i>Permission</a></li>
                 </ul>
@@ -54,8 +62,9 @@
             <li><a href="{{route('comments.index')}}"><i class="fa fa-comments"></i><span>Comments</span></a></li>
 
             <li><a href="#"><i class="fa fa-paper-plane-o"></i><span>Newsletter</span></a></li>
-
-            <li><a href="user/setting"><i class="fa fa-cogs"></i> <span>Settings</span></a></li>
+            @can('users.updatesetting')
+            <li><a href="{{route('settings.index')}}"><i class="fa fa-cogs"></i> <span>Settings</span></a></li>
+       @endcan
         </ul>
     </section>
     <!-- /.sidebar -->

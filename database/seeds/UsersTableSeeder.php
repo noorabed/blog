@@ -18,19 +18,22 @@ class UsersTableSeeder extends Seeder
             [
                 'name'=>"John",
                  'email'=>"john@test.com",
-                'password'=>bcrypt('secret')
+                'password'=>bcrypt('secret'),
+                    'role_id'=>"4"
             ],
 
             [
                 'name'=>"admin",
                 'email'=>"admin@test.com",
-                'password'=>bcrypt('secret')
+                'password'=>bcrypt('secret'),
+                 'role_id'=>"4"
             ],
 
             [
                 'name'=>"Noor",
                 'email'=>"noor@test.com",
-                'password'=>bcrypt('secret')
+                'password'=>bcrypt('secret'),
+                 'role_id'=>"4",
             ]
 
         ]);

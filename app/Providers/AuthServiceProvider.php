@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Providers;
-use App\Post;
-use App\Policies\PostPolicy;
+use App\User;
+use App\Blog;
+use App\Policies\BlogPolicy;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -16,8 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
 
-      //  'App\Model' => 'App\Policies\ModelPolicy',
-        //Post::class => PostPolicy::class,
+     'App\Model' => 'App\Policies\ModelPolicy',
+
     ];
 
     /**
@@ -30,5 +31,14 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::resource('blogs','App\Policies\BlogPolicy') ;
+        Gate::define('blogs.category','App\Policies\BlogPolicy@category') ;
+        Gate::define('blogs.editcategory','App\Policies\BlogPolicy@editcategory') ;
+        Gate::define('blogs.deletecategory','App\Policies\BlogPolicy@deletecategory') ;
+        Gate::define('blogs.deletetag','App\Policies\BlogPolicy@deletetag') ;
+
+        Gate::define('users.create','App\Policies\UserPolicy@create') ;
+        Gate::define('users.update','App\Policies\UserPolicy@update') ;
+        Gate::define('users.delete','App\Policies\UserPolicy@delete') ;
+        Gate::define('users.updatesetting','App\Policies\UserPolicy@updatesetting') ;
     }
 }

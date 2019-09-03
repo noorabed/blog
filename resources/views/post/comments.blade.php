@@ -14,25 +14,6 @@
         </ol>
     </section>
     <br>
-    <div class="card-body">
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div><br />
-        @endif
-        @if (session()->has('success'))
-            <div class="alert alert-danger">
-                <ul>
-                    <li>{{ session('success') }}</li>
-                </ul>
-            </div><br />
-
-    </div>
-    @endif
     <!-- Main content -->
     <section class="content">
         <div class="row">
