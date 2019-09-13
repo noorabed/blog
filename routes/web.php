@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('layouts/welcome');
 });
 Auth::routes();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index')->name('home');
 //user1
 //Route::post('users/update', 'UserController@update')->name('users.update');
@@ -76,4 +77,17 @@ Route::post('settings/update/{id}', 'SettingController@update')->name('settings.
 
 Route::resource('tags', 'TagController');
 Route::get('tags/destroy/{id}', 'TagController@destroy')->name('tags.dertroy');
+//Route::resource('search', 'SearchController');
+//Route::get('search', 'SearchController@action')->name('search.action');
 
+Route::get('search', 'BlogController@search')->name('blogs.search');
+
+Route::resource('logs', 'ActionControler');
+Route::get('logs/destroy/{id}', 'ActionControler@destroy');
+Route::get('blogs/fetch', 'BlogController@fetch')->name('blogs.fetch');
+/**Route::get('/ajax-subcategory',function(){
+   $cat_id=\Illuminate\Support\Facades\Input::get('cat-id');
+   $subcategories=\App\Subcategories::where('category_id','=',$cat_id)->get();
+   return \Illuminate\Http\Response::json($subcategories);
+});*/
+Route::get('/getCategories/{id}', 'BlogController@getCategories');

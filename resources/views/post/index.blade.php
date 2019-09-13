@@ -5,6 +5,8 @@
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 @section('content')
@@ -26,19 +28,39 @@
                     <div class="box-body">
                         <div align="right">
                             <br>
-        {{--<button type="button" name="create_post" id="create_post" class="btn btn-success btn-sm">Create Post</button>--}}
+                            <div>
+                                <div class="form-group col-md-3">
+                                    <input type="text" name="post_tittle" id="post_tittle" class="form-control" placeholder="Search for Title" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input type="text" name="created_at" id="created_at" class="form-control" placeholder="Search for Date" />
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input type="text" name="published_at" id="published_at" class="form-control" placeholder="Search for Post State"  />
+                                </div>
+                                <input type="hidden" id="search_function_fire" value="0">
+                                <div class="form-group col-md-3">
+                                <button  name="filter" id="filter" class="btn btn-success btn-sm">search</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div align="right">
+                            {{--<button type="button" name="create_post" id="create_post" class="btn btn-success btn-sm">Create Post</button>--}}
                             @can('blogs.create',Auth::user())
-        <a href="{{route('blogs.create')}}" class="btn btn-success btn-sm">Create Post</a>
-                                @endcan
+                                <a href="{{route('blogs.create')}}" class="btn btn-success btn-sm">Create Post</a>
+                            @endcan
                         </div>
                         <br>
+                        <br>
+
     <div class="table-responsive">
         <table class="table table-bordered" id="post_table">
             <thead>
             <tr>
                 <th width="10%">Image</th>
-                <th width="20%">Post Tittle</th>
-                <th width="35%">Post Descripition</th>
+                <th width="20%">PostTittle</th>
+                <th width="35%">PostDescripition</th>
                 <th width="20%">Date</th>
                 <th width="20%">Action</th>
 
@@ -91,8 +113,15 @@
             $('#post_table').DataTable({
                 processing: true,
                 serverSide: true,
+                "bFilter": false,
                 ajax:{
                     url: "{{ route('blogs.index') }}",
+                    "data": function ( d ) {
+                        d.search_function_fire=$('#search_function_fire').val();
+                        d.post_tittle=$('#post_tittle').val();
+                        d.created_at=$('#created_at').val();
+                        d.published_at = $('#published_at').val();
+                    }
                 },
                 columns:[
                     {
@@ -128,7 +157,11 @@
 
                 ]
             });
+            $('#filter').on('click', function(e) {
+             $('#search_function_fire').val(1);
+             $('#post_table').DataTable().ajax.reload();
 
+            });
 
             $(document).on('click', '.delete', function(){
                 user_id = $(this).attr('id');
@@ -161,12 +194,15 @@
 
                 }
                 else{
-                    return '<span  class="label label-info"> Draft</span>';
+                    return '<span  class="label label-info">Draft</span>';
 
 
                 }
 
             }
+
+
+
 
         });
 

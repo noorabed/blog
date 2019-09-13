@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Action;
 use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -15,7 +16,7 @@ class UserController extends Controller
 {
     public function index()
     {
-//
+        //
     }
     public function create()
     {
@@ -23,7 +24,6 @@ class UserController extends Controller
     }
     public function view()
     {
-
         $users =User::all();
         $roles =Role::all();
        //dd($users,$roles);
@@ -80,6 +80,7 @@ class UserController extends Controller
         );
            // dd($form_data);
        User::create($form_data);
+        Action::addToLog(' add user ');
 
         return response()->json(['success' => 'Data Added successfully.']);
 
@@ -144,6 +145,7 @@ class UserController extends Controller
 
          $users=User::whereId($request->hidden_id)->update($form_data);
       //User::find($request->hidden_id)->roles()->sync($request->id);
+        Action::addToLog(' update user ');
 
         return response()->json(['success' => 'Data is successfully updated']);
     }
@@ -152,7 +154,14 @@ class UserController extends Controller
     {
         $data = User::findOrFail($id);
         $data->delete();
+        Action::addToLog(' delete user ');
     }
+    public function delete($id)
+    {
+        $data = Action::findOrFail($id);
+        $data->delete();
+    }
+
     public function changestate($id)
     {
 
@@ -169,11 +178,26 @@ class UserController extends Controller
             // dd('else',$user);
         }
       $user->save();
+      Action::addToLog('change state for user');
        return response()->json(['success' => 'json Changed successfully.']);
 
     }
 
-
-
+    public function action(Request $request)
+    {
+        $logs = Action::ActionLists();
+        if(request()->ajax())
+        {
+            return datatables()->of(Action::latest()->get())
+                ->addColumn('action', function($data){
+                    $button = '&nbsp;&nbsp;&nbsp;&nbsp;';
+                    $button .= '<button type="button" name="delete" id="' . $data->id . '" class="delete btn btn-danger btn-sm">Delete</button>';
+                    return $button;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('user.action',compact('logs'));
+    }
 
 }

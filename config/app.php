@@ -161,6 +161,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Stevebauman\Location\LocationServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
 
 
 
@@ -179,6 +181,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Laratrust\LaratrustServiceProvider::class,
+        \Torann\GeoIP\GeoIPServiceProvider::class,
 
 
 
@@ -237,6 +240,11 @@ return [
         'Input' => Illuminate\Support\Facades\Input::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Laratrust'   => Laratrust\LaratrustFacade::class,
+       // 'Location' => Stevebauman\Location\Facades\Location::class,
+        'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'Action' => App\Helpers\Action::class,
+
 
 
     ],

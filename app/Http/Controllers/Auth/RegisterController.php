@@ -63,6 +63,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $setting = \App\Setting::first();
+        if($setting->register==0){
+            abort(404);
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

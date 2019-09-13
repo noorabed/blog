@@ -60,7 +60,7 @@ class UserPolicy
     }
     public function updatesetting(User $admin)
     {
-        $admin=Role::whereName('admin')->first();
+        $admin=Role::find($admin->role_id);
         $role_permissions = $admin->permissions;
         foreach ($role_permissions as $permission) {
             if ($permission->id ==17) {
@@ -70,4 +70,6 @@ class UserPolicy
         }
         return false;
     }
+
+
 }

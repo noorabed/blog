@@ -172,7 +172,7 @@ class SettingController extends Controller
             'mobile'          =>$request->mobile,
             'logo' =>  $image_name,
             'register' =>  $registers,
-            'comment' =>  $comments,
+            'comment' =>  $comments
         );
 
          // dd($form_data);

@@ -15,7 +15,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li>
-                <a href="#">
+                <a href="{{route('home')}}">
                     <i class="fa fa-home"></i> <span>Dashboard</span>
                 </a>
             </li>
@@ -39,8 +39,9 @@
                    @endcan
                 </ul>
             </li>
-
+@can('isAdmin')
             <li><a href="{{route('categories.index')}}"><i class="fa fa-folder"></i> <span>Categories</span></a></li>
+            @endcan
             @can('blogs.deletetag',Auth::user())
             <li><a href="{{route('tags.index')}}"><i class="fa fa-folder"></i> <span>Tags</span></a></li>
             @endcan
@@ -60,9 +61,9 @@
                 </ul>
             </li>
             <li><a href="{{route('comments.index')}}"><i class="fa fa-comments"></i><span>Comments</span></a></li>
-
+            <li><a href="{{route('logs.index')}}"><i class="fa fa-circle-o"></i> User Action</a></li>
             <li><a href="#"><i class="fa fa-paper-plane-o"></i><span>Newsletter</span></a></li>
-            @can('users.updatesetting')
+            @can('users.updatesetting',Auth::user())
             <li><a href="{{route('settings.index')}}"><i class="fa fa-cogs"></i> <span>Settings</span></a></li>
        @endcan
         </ul>

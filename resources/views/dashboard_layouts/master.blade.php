@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MyBlog | Add New Post</title>
@@ -33,6 +33,10 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     @stack('style')
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
@@ -82,7 +86,7 @@
                                     <a href="profile" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="i" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>

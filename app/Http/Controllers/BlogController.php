@@ -1,16 +1,20 @@
 <?php
 namespace App\Http\Controllers;
+use App\Subcategories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
+use yajra\Datatables\Datatables;
 use App\Blog;
 use App\User;
+use App\Action;
 use App\Category;
 use App\Tag;
 use DB;
 use function Sodium\compare;
 use Validator;
 use Redirect;
+
 
 class BlogController extends Controller
 {
@@ -20,16 +24,22 @@ class BlogController extends Controller
      * @return \Illuminate\Http\Response
      */
     protected $limit =3;
-    public function index()
+    public function index(Request $request)
     {
+
         $user = Auth::user();
         if ($user->can('blogs.view', Blog::class)) {
             $blogs = Blog::all();
             $categories = Category::all();
             if (request()->ajax()) {
+       // dd($request->all(),$request->search_function_fire);
+              if($request->search_function_fire ==1){
+                return $this->search($request);
+             }
+
                 return datatables()->of(Blog::latest()->get())
                     ->addColumn('action', function ($data) {
-                            $button = '<a href="' . route('blogs.edit', $data->id) . '" name="edit" id="' . $data->id . '" class="edit btn btn-primary btn-sm">Edit</a>';
+                        $button = '<a href="' . route('blogs.edit', $data->id) . '" name="edit" id="' . $data->id . '" class="edit btn btn-primary btn-sm">Edit</a>';
                         $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
                         $button .= '<button type="button" name="delete" id="' . $data->id . '" class="delete btn btn-danger btn-sm">Delete</button>';
                         return $button;
@@ -40,6 +50,7 @@ class BlogController extends Controller
                     })
                     ->rawColumns(['action'])
                     ->make(true);
+
             }
             return view('post.index', compact('blogs', 'categories'));
         } else {
@@ -81,39 +92,32 @@ class BlogController extends Controller
 
             // $tags = explode(',',$request->post_tags);
             //  dd($tags);
-            $rules = array(
+         $this->validate($request,[
                 'post_tittle' => 'required',
-                'slug' => 'required|unique:blogs',
+                'slug' => 'required',
                 'post_descripition' => 'required',
                 'category_id' => 'required',
-            );
-
-
-            $error = Validator::make($request->all(), $rules);
-
-            if ($error->fails()) {
-                return response()->json(['errors' => $error->errors()->all()]);
-            }
+            ]);
 
             $image = $request->file('post_photo');
 
             $new_name = rand() . '.' . $image->getClientOriginalExtension();
 
             $image->move(public_path('image'), $new_name);
-            $form_data = array(
-                'post_tittle' => $request->post_tittle,
-                'slug' => $request->slug,
-                'excerpt' => $request->excerpt,
-                'post_descripition' => $request->post_descripition,
-                'post_photo' => $new_name,
-                'user_id' => auth()->id(),
-                'view_count' => rand(1, 10) * 10,
-                'category_id' => $request->category_id,
-                'published_at' => $request->published_at,
+            $newBlog = new Blog();
+            $newBlog->post_tittle = $request->post_tittle;
+            $newBlog->slug = $request->slug ;
+            $newBlog->excerpt = $request->excerpt;
+            $newBlog->post_descripition= $request->post_descripition;
+            $newBlog->post_photo = $new_name;
+            $newBlog->user_id =auth()->id();
+            $newBlog->view_count = auth()->id();
+            $newBlog->category_id = $request->category_id;
+            $newBlog->published_at= $request->published_at;
 
-            );
-            $create = Blog::create($form_data);
-            if ($create) {
+            $newBlog->save();
+          //  $create = Blog::create($form_data);
+            if ($newBlog) {
                 $tagNames = explode(',', $request->get('post_tags'));
                 $tagIds = [];
                 foreach ($tagNames as $tagName) {
@@ -127,9 +131,9 @@ class BlogController extends Controller
                     }
 
                 }
-                $create->tags()->sync($tagIds);
+                $newBlog->tags()->sync($tagIds);
             }
-
+            Action::addToLog('create post');
             return redirect('/blogs')->with('success', 'Blog Added successfully.');
 
         }
@@ -176,7 +180,7 @@ class BlogController extends Controller
         {
             $rules = array(
                 'post_tittle'    =>  'required',
-                'slug'               =>  'required|unique:blogs',
+                'slug'               =>  'required',
                 'post_descripition'     =>  'required',
                 'post_photo'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
             );
@@ -193,7 +197,7 @@ class BlogController extends Controller
         {
             $rules = array(
                 'post_tittle'    =>  'required',
-                'slug'               =>  'required|unique:blogs',
+                'slug'               =>  'required',
                 'post_descripition'     =>  'required'
             );
 
@@ -213,11 +217,12 @@ class BlogController extends Controller
             'post_photo'            =>   $image_name,
             'slug'               =>$request->slug,
             'excerpt'               =>$request->excerpt,
+            'view_count' => $request->view_count,
         );
 
         $update=Blog::whereId($id)->update($form_data);
-
-        if($update)
+        Action::addToLog('update post');
+      /**  if($update)
         {
             $tagNames = explode(',',$request->get('post_tags'));
             $tagIds = [];
@@ -236,13 +241,13 @@ class BlogController extends Controller
             }
             $update->tags()->sync($tagIds);
         }
-
+*/
         return redirect('/blogs')->with('success', 'Blog edit successfully.');
 
 
     }
 
-     public function show(){
+     public function show( Request $request){
 
          $tags=Tag::all();
         $categories = Category::with('posts')
@@ -253,21 +258,44 @@ class BlogController extends Controller
             ->latest()
            ->LatestFirst()->published();
         // check
-        // dd($blogs);
-         if ($term=request('term')){
-             $blogs->where('post_tittle','LIKE',"%{$term}%");
+       // dd($blogs);
+         if($request->ajax()) {
+
+             $data = Blog::where('post_tittle', 'LIKE', $request->post_tittle . '%')
+                 ->get();
+             $output = '';
+             if (count($data) > 0) {
+                 $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
+                 foreach ($data as $row) {
+                     $output .= '<li class="list-group-item">' . $row->post_tittle . '</li>';
+                 }
+                 $output .= '</ul>';}
+             else {
+                 $output .= '<li class="list-group-item">'.'No results'.'</li>';
+             }
+             return $output;
          }
+       /**  if ($term=request('term')){
+             $blogs->where('post_tittle','LIKE',"%{$term}%")
+             ->get();
+         }*/
          $blogs=$blogs->simplePaginate($this->limit);
 
 
         return view('blog.index',compact('blogs', 'categories','tags'));
     }
+    public function fetch(Request $request)
+    {
 
-        public function view($id){
+        }
+
+
+    public function view($id){
+            $setting = \App\Setting::first();
             $tags=Tag::all();
         //$categories = Category::orderBy('title','asc') ->get();
         $blogs=Blog::findOrFail($id);
-        return view('blog.show',compact('blogs', 'tags'));
+        return view('blog.show',compact('blogs', 'tags','setting'));
     }
 
     public function category( Category $category){
@@ -296,20 +324,62 @@ class BlogController extends Controller
     }
 
 
+    public function search(Request $request){
+      $blogs = DB::table('blogs')->select(['id', 'post_tittle', 'post_descripition','published_at','post_photo', 'created_at', 'updated_at']);
 
+       return Datatables::of($blogs)
+      //  return datatables()->of(Blog::latest()->get())
+
+            ->addColumn('action', function ($data) {
+                $button = '<a href="' . route('blogs.edit', $data->id) . '" name="edit" id="' . $data->id . '" class="edit btn btn-primary btn-sm">Edit</a>';
+                $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
+                $button .= '<button type="button" name="delete" id="' . $data->id . '" class="delete btn btn-danger btn-sm">Delete</button>';
+                return $button;
+
+            })
+            ->rawColumns(['action'])
+            ->filter(function ($query) use ($request) {
+                if ($request->has('post_tittle')) {
+                    $query->where('post_tittle', 'like', "%{$request->get('post_tittle')}%");
+                }
+
+                Action::addToLog('search for post tittle');
+                if ($request->has('created_at')) {
+                    $query->where('created_at', 'like', "%{$request->get('created_at')}%");
+                }
+                Action::addToLog('search for date of post ');
+               $search= $request->has('published_at');
+              if($search=='published'){
+               return $query->whereNotNull('published_at')
+                      ->get();
+              }
+              elseif($search=='Draft'){
+               return $query->whereNull('published_at')
+                      ->get();
+              }
+
+               Action::addToLog('search for post state ');
+            })
+
+            ->make(true);
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param int $id
      * @return \Illuminate\Http\Response
      */
+    public function getCategories($id)
+    {
+        $subcategory= Subcategories::where('category_id',$id)->get();
+        return json_encode($subcategory);
+    }
 
     public function destroy($id)
     {
-
         $data = Blog::findOrFail($id);
         $data->delete();
-
+       Action::addToLog('delete post');
     }
 
 

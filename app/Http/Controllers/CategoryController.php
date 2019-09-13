@@ -10,13 +10,18 @@ use Illuminate\Support\Facades\Auth;
 use App\Category;
 use App\User;
 use Validator;
-
+use Gate;
 class CategoryController extends Controller
 {
 
     public function index()
     {
+
+            if(!Gate::allows('isAdmin')){
+                abort(404);
+            }
         $user=auth()->user();
+
         $categories = Category::all();
         if(request()->ajax())
         {
@@ -62,6 +67,7 @@ class CategoryController extends Controller
         $category->slug = $request->get('slug');
         //$category->user()->associate(auth()->id());
         $category->save();
+        \Action::addToLog('search for add category ');
 
         return response()->json(['success' => 'Data Added successfully.']);
        }
@@ -82,6 +88,7 @@ class CategoryController extends Controller
         ]);
        // dd($request->all());
         Category::whereId($request->hidden_id)->update($validated);
+        \Action::addToLog('search for update category ');
 
         return response()->json(['success' => 'Category is successfully updated']);
     }
@@ -89,6 +96,7 @@ class CategoryController extends Controller
     {
         $data = Category::find($id);
         $data->delete();
+        \Action::addToLog('search for delete category ');
 
     }
 

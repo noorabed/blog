@@ -32,6 +32,7 @@ class TagController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
+
         return view('tag.tag',compact('tags'));
         } else {
             echo 'Not Authorized';
@@ -104,5 +105,6 @@ class TagController extends Controller
     {
         $data = Tag::findOrFail($id);
         $data->delete();
+        Action::addToLog(' delete tag ');
     }
 }

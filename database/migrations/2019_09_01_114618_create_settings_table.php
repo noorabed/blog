@@ -22,8 +22,8 @@ class CreateSettingsTable extends Migration
             $table->string('address')->nullable();
             $table->string('mobile')->nullable();
             $table->string('logo')->nullable();
-            $table->boolean('register')->default(false);
-            $table->boolean('comment')->default(false);
+            $table->boolean('register')->default(true);
+            $table->boolean('comment')->default(true);
             $table->timestamps();
         });
     }

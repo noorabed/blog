@@ -13,25 +13,16 @@
             <li class="active">Add New Post</li>
         </ol>
     </section>
-
-  <div class="card-body">
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div><br />
-        @endif
+    <div class="box-body">
         @if (session()->has('success'))
             <div class="alert alert-success">
                 <ul>
                     <li>{{ session('success') }}</li>
                 </ul>
             </div><br />
-    </div>
         @endif
+    </div>
+
 
 <div>
     <!-- Main content -->
@@ -43,25 +34,30 @@
                     <div class="box">
                         <!-- form start -->
                             <div class="box-body">
-                                <div class="form-group }}"  >
+                                <div class="form-group {{$errors->has('post_tittle')? 'has-error':''}}"  >
                                     <label for="title">Title</label>
                                     <input type="text" placeholder="Enter Title here" id="post_tittle" name="post_tittle" class="form-control">
-                                    <span class="help-block"></span>
-
+                                    @if($errors->has('post_tittle'))
+                                    <span class="help-block">{{$errors->first('post_tittle')}}</span>
+                                          @endif
                                 </div>
-                                <div class="form-group"  >
+                                <div class="form-group {{$errors->has('slug')? 'has-error':''}}"  >
                                     <label for="slug">Slug</label>
                                     <input type="text" id="slug"  name="slug"class="form-control">
-                                    <p class="help-block"></p>
+                                    @if($errors->has('slug'))
+                                        <span class="help-block">{{$errors->first('slug')}}</span>
+                                    @endif
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group ">
                                     <label for="body">Excerpt</label>
                                     <textarea name="excerpt" id="excerpt" rows="5" class="form-control"></textarea>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group {{$errors->has('slug')? 'has-error':''}}">
                                     <label for="body">Body</label>
                                     <textarea name="post_descripition" id="body"   rows="10" class="form-control"></textarea>
-                                    <span class="help-block"></span>
+                                    @if($errors->has('post_descripition'))
+                                        <span class="help-block">{{$errors->first('post_descripition')}}</span>
+                                    @endif
                                 </div>
                             </div>
                             <!-- /.box-body -->
@@ -90,23 +86,47 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Category</h3>
+                            <h3 class="box-title">Category </h3>
                         </div>
                         <div class="box-body">
-                            <div class="radio">
+                            <div>
+                            <label for="">Categories</label>
+                            <select class="form-control" name="category" id="category">
+                                <option value="">Select Category </option>
+                                @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->title}} </option>
+                                @endforeach
+                            </select>
+
+                            <label for=""> SubCategories</label>
+                            <select class="form-control" name="subcategory" id="subcategory">
+                                <option value=""> </option>
+                            </select>
+                            </div>
+
+                      {{--<div class="box-header with-border">
+                            <h3 class="box-title">Category And Sub Category</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="radio {{$errors->has('category_id')? 'has-error':''}}">
                                 <label>
                                     @foreach($categories as $category)
                                         <input type="radio" name="category_id" id="category-1"  value="{{$category->id}}"> {{$category->title}}
                                         <br />
                                     @endforeach
                                 </label>
+                                @if($errors->has('category_id'))
+                                    <span class="help-block">{{$errors->first('category_id')}}</span>
+                                @endif
 
                             </div>
 
-                        </div>
+                        </div>--}}
                     </div>
+                        <br>
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">Tags</h3>
@@ -148,6 +168,7 @@
 
         <script type="text/javascript">
 
+
             $( document ).ready(function() {
                 $(' #post_tittle').on('blur',function () {
                     var theTitle =this.value.toLowerCase().trim();
@@ -167,7 +188,34 @@
                     $('#published_at').val("");
                     $('#post_form').submit();
                 });
+
+                $('select[name=category]').on('change',function () {
+                  //console.log('noor');
+                    var category_id=$(this).val();
+                    if(category_id){
+                       // console.log(category_id);
+                       $. ajax({
+                            url: '/getCategories/'+category_id,
+                           type:'GET',
+                           dataType:'json',
+                           success:function(data)
+                           {
+                             console.log(data);
+                               $('select[name=subcategory]').empty();
+                               $.each(data,function (Key,value) {
+                                   $('select[name=subcategory]').append('<option value="'+Key+'">'+value+'</option>');
+
+                               });
+                           }
+                        });
+                    }else{
+                        $('select[name=subcategory]').empty();
+                    }
+                });
             });
+
+
+
 
 
         </script>

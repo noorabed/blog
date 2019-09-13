@@ -2,7 +2,7 @@
 
 namespace App;
 
-
+use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,10 +18,10 @@ class User extends Authenticatable
      *
      * @var array
      */
-    //protected $guarded=[];
-    protected $fillable = [
-        'name', 'email', 'password', 'state', 'user_photo','role_id'
-    ];
+    protected $guarded=[];
+    /*protected $fillable = [
+        'name', 'email', 'password', 'state', 'user_photo','role_id',
+    ];*/
 
     /**
      * The attributes that should be hidden for arrays.
@@ -56,4 +56,9 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role');
 
     }
+    public function visitor()
+    {
+        return $this->hasMany('App\Vistor');
+    }
+
 }

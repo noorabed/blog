@@ -7,7 +7,7 @@ use App\Policies\BlogPolicy;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-
+use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -26,9 +26,9 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(GateContract $gate)
     {
-        $this->registerPolicies();
+        $this->registerPolicies($gate);
 
         Gate::resource('blogs','App\Policies\BlogPolicy') ;
         Gate::define('blogs.category','App\Policies\BlogPolicy@category') ;
@@ -40,5 +40,12 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('users.update','App\Policies\UserPolicy@update') ;
         Gate::define('users.delete','App\Policies\UserPolicy@delete') ;
         Gate::define('users.updatesetting','App\Policies\UserPolicy@updatesetting') ;
+
+
+        $gate->define('isAdmin', function($user){
+            return $user->id == '1' ;
+        });
+
+
     }
 }

@@ -46,12 +46,12 @@
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="register"  > Stop Register
+                                    <input type="checkbox" name="register" > Stop Register
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="comment "> Stop Comments
+                                    <input type="checkbox" name="comment"> Stop Comments
                                 </label>
                             </div>
 

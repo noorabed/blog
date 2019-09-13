@@ -48,7 +48,11 @@ class CommentController extends Controller
         //$data = $request->all();
       //  $data['blog_id']= $post->id;
        //Comment::create($data);
-        $post->comments()->create($request->all());
+        $setting = \App\Setting::first();
+        if($setting->comment==0) {
+            abort(404);
+        }
+            $post->comments()->create($request->all());
        return redirect()->back()->with('message',"Your comments Successfully send.");
     }
 
@@ -96,6 +100,7 @@ class CommentController extends Controller
     {
         $comments = Comment::findOrFail($id);
         $comments->delete();
+        Action::addToLog(' delete comments ');
         return redirect('/comments')->with('success', 'Comment is successfully deleted');
     }
 
