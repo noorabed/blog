@@ -53,12 +53,7 @@ class HomeController extends Controller
         $all_view=Blog::sum('view_count');
       // dd(\App\Blog::withCount('user')->get());
        // $date = \Carbon\Carbon::today()->subDays(30);
-        $active_user=User::withCount('comments')
-            ->withCount('blogs')
-            ->orderBy('blogs_count','desc')
-            ->orderBy('comments_count','desc')
-            -> where('created_at', '>=', $date)
-            ->get();
+        $active_user='0';
 //dd($active_user);
 
 

@@ -4,6 +4,7 @@ use App\Subcategories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 use yajra\Datatables\Datatables;
 use App\Blog;
 use App\User;
@@ -259,22 +260,6 @@ class BlogController extends Controller
            ->LatestFirst()->published();
         // check
        // dd($blogs);
-         if($request->ajax()) {
-
-             $data = Blog::where('post_tittle', 'LIKE', $request->post_tittle . '%')
-                 ->get();
-             $output = '';
-             if (count($data) > 0) {
-                 $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
-                 foreach ($data as $row) {
-                     $output .= '<li class="list-group-item">' . $row->post_tittle . '</li>';
-                 }
-                 $output .= '</ul>';}
-             else {
-                 $output .= '<li class="list-group-item">'.'No results'.'</li>';
-             }
-             return $output;
-         }
        /**  if ($term=request('term')){
              $blogs->where('post_tittle','LIKE',"%{$term}%")
              ->get();
@@ -285,9 +270,26 @@ class BlogController extends Controller
         return view('blog.index',compact('blogs', 'categories','tags'));
     }
     public function fetch(Request $request)
-    {
+      {
+            if($request->get('query'))
+            {
+            $query = $request->get('query');
+            $data = DB::table('blogs')
+                ->where('post_tittle', 'LIKE', "%{$query}%")
+                ->get();
 
-        }
+                $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+                foreach($data as $row)
+                {
+                    $output .= '
+                     <li><a href="#">'.$row->post_tittle.'</a></li>
+                     ';
+                }
+                $output .= '</ul>';
+                echo $output;
+            }
+    }
+
 
 
     public function view($id){
@@ -295,6 +297,14 @@ class BlogController extends Controller
             $tags=Tag::all();
         //$categories = Category::orderBy('title','asc') ->get();
         $blogs=Blog::findOrFail($id);
+
+        $blogKey = 'blog_' . $blogs->id;
+        if (!Session::has($blogKey)) {
+            $viewCount = $blogs->view_count + 1;
+            $blogs->update(['view_count' => $viewCount]);
+            Session::put($blogKey, 1);
+        }
+
         return view('blog.show',compact('blogs', 'tags','setting'));
     }
 

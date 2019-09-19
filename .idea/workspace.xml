@@ -2,225 +2,205 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fad59244-d4f9-455c-8df3-c13adcda74b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TagController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/BlogPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/BlogPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/UserPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/UserPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_01_114618_create_settings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_01_114618_create_settings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/AdminLTE.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/AdminLTE.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/AdminLTE.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/AdminLTE.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/_all-skins.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/_all-skins.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/_all-skins.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/_all-skins.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black-light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black-light.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue-light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue-light.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green-light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green-light.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple-light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple-light.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red-light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red-light.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow-light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow-light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow-light.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar04.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar04.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar5.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/boxed-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/boxed-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/boxed-bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/boxed-bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/american-express.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/american-express.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/cirrus.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/cirrus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/mastercard.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/mastercard.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/mestro.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/mestro.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/paypal.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/paypal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/paypal2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/paypal2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/visa.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/visa.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/default-50x50.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/default-50x50.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/icons.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/icons.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/photo1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/photo1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/photo2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/photo2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/photo3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/photo3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/photo4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/photo4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/user1-128x128.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/user1-128x128.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/user2-160x160.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/user2-160x160.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/user3-128x128.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/user3-128x128.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/user4-128x128.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/user4-128x128.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/user5-128x128.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/user5-128x128.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/user6-128x128.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/user6-128x128.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/user7-128x128.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/user7-128x128.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/img/user8-128x128.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/img/user8-128x128.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/js/app.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/js/app.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/js/demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/js/jquery-2.2.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/js/jquery-2.2.3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/js/pages/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/js/pages/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/js/pages/dashboard2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/js/pages/dashboard2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/_all.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/_all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/icheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/icheck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/icheck.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/icheck.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/_all.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/_all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/aero.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/aero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/green.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/green.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/grey.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/grey.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/orange.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/orange.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/pink.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/pink.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/purple.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/purple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/red.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/red.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/yellow.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/yellow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/_all.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/_all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/_all.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/_all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/simple-mde/simplemde.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/simple-mde/simplemde.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/admin_layout/plugins/simple-mde/simplemde.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/simple-mde/simplemde.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blog/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blog/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard_layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard_layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard_layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard_layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/settings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/settings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin_layout/blog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin_layout/form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin_layout/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/admin_layout/login.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.phar" afterPath="$PROJECT_DIR$/composer.phar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout" afterPath="$PROJECT_DIR$/public/admin_layout" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar04.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar04.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar2.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar3.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/avatar5.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/avatar5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/boxed-bg.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/boxed-bg.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/boxed-bg.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/boxed-bg.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/american-express.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/american-express.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/cirrus.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/cirrus.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/mastercard.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/mastercard.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/mestro.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/mestro.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/paypal.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/paypal.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/paypal2.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/paypal2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/credit/visa.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/credit/visa.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/default-50x50.gif" afterPath="$PROJECT_DIR$/public/admin_layout/img/default-50x50.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/icons.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/icons.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/photo1.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/photo1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/photo2.png" afterPath="$PROJECT_DIR$/public/admin_layout/img/photo2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/photo3.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/photo3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/photo4.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/photo4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/user1-128x128.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/user1-128x128.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/user2-160x160.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/user2-160x160.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/user3-128x128.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/user3-128x128.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/user4-128x128.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/user4-128x128.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/user5-128x128.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/user5-128x128.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/user6-128x128.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/user6-128x128.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/user7-128x128.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/user7-128x128.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/img/user8-128x128.jpg" afterPath="$PROJECT_DIR$/public/admin_layout/img/user8-128x128.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow@2x.png" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env.example" afterPath="$PROJECT_DIR$/.env.example" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/blog.iml" afterPath="$PROJECT_DIR$/.idea/blog.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Comment.php" afterPath="$PROJECT_DIR$/app/Comment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/AdminLTE.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/AdminLTE.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/AdminLTE.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/AdminLTE.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/_all-skins.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/_all-skins.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/_all-skins.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/_all-skins.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black-light.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black-light.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black-light.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black-light.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-black.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue-light.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue-light.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue-light.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue-light.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-blue.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green-light.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green-light.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green-light.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green-light.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-green.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple-light.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple-light.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple-light.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple-light.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-purple.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red-light.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red-light.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red-light.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red-light.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-red.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow-light.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow-light.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow-light.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow-light.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/css/skins/skin-yellow.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/js/app.js" afterPath="$PROJECT_DIR$/public/admin_layout/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/js/app.min.js" afterPath="$PROJECT_DIR$/public/admin_layout/js/app.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/js/demo.js" afterPath="$PROJECT_DIR$/public/admin_layout/js/demo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/js/jquery-2.2.3.min.js" afterPath="$PROJECT_DIR$/public/admin_layout/js/jquery-2.2.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/js/pages/dashboard.js" afterPath="$PROJECT_DIR$/public/admin_layout/js/pages/dashboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/js/pages/dashboard2.js" afterPath="$PROJECT_DIR$/public/admin_layout/js/pages/dashboard2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/all.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/_all.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/flat.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/flat/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/futurico/futurico.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/icheck.js" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/icheck.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/icheck.min.js" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/icheck.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/_all.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/aero.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/blue.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/green.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/grey.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/line.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/orange.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/pink.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/purple.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/red.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/yellow.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/line/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/_all.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/minimal.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/minimal/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/polaris/polaris.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/_all.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/square.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/iCheck/square/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/simple-mde/simplemde.min.css" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/simple-mde/simplemde.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/admin_layout/plugins/simple-mde/simplemde.min.js" afterPath="$PROJECT_DIR$/public/admin_layout/plugins/simple-mde/simplemde.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/blog/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/blog/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -245,43 +225,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="323" column="5" lean-forward="true" selection-start-line="323" selection-start-column="5" selection-end-line="323" selection-end-column="5" />
+            <state relative-caret-position="4709">
+              <caret line="291" column="0" lean-forward="false" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
               <folding>
                 <element signature="e#38#60#0#PHP" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
-                <element signature="e#10299#12009#0#PHP" />
+                <marker date="1568921727549" expanded="true" signature="8779:8811" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/category/categorylist.blade.php">
+      <file leaf-file-name="sidebar.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="198" column="22" lean-forward="true" selection-start-line="198" selection-start-column="22" selection-end-line="199" selection-end-column="24" />
+            <state relative-caret-position="85">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding>
+                <marker date="1568922093333" expanded="true" signature="9:134" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/post/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="214" column="14" selection-start-line="214" selection-start-column="14" selection-end-line="214" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+            <state relative-caret-position="1258">
+              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -370,20 +344,31 @@
         <option value="$PROJECT_DIR$/resources/views/blog/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/post/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/view.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/main.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/blog/show.blade.php" />
         <option value="$PROJECT_DIR$/app/Category.php" />
         <option value="$PROJECT_DIR$/app/Subcategories.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_09_13_185455_create_subcategories_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/post/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/blog/show.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
-        <option value="$PROJECT_DIR$/resources/views/post/create.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
@@ -492,136 +477,75 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dashboard_layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="category" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard_layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="post" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../laravelcrud" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="SearchEverywhereHistoryKey" value="we&#9;FILE&#9;file://C:/wamp64/www/blog/routes/web.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -646,13 +570,17 @@
     </option>
   </component>
   <component name="RunManager" selected="PHP Script.BlogController.php">
+    <configuration name="BlogController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
-      <method v="2" />
     </configuration>
-    <configuration name="BlogController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
-      <method v="2" />
-    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="PHP Script.BlogController.php" />
+      <item index="1" class="java.lang.String" itemvalue="PHPUnit.phpunit.xml" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -772,62 +700,62 @@
       <workItem from="1568179947811" duration="3738000" />
       <workItem from="1568188204679" duration="26588000" />
       <workItem from="1568273541790" duration="43834000" />
+      <workItem from="1568891849249" duration="8566000" />
+      <workItem from="1568925087523" duration="108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1043832000" />
+    <option name="totallyTimeSpent" value="1052506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Structure" order="0" sideWeight="0.5008183" side_tool="true" weight="0.3161876" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49918166" visible="true" weight="0.28971255" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030257" side_tool="true" weight="0.2831424" />
-      <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4969743" weight="0.58101475" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25340393" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Structure" order="0" sideWeight="0.5008183" side_tool="true" weight="0.3161876" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49918166" visible="true" weight="0.28971255" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5030257" side_tool="true" weight="0.2831424" />
-      <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4969743" weight="0.58101475" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -878,69 +806,49 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php</url>
-          <line>249</line>
+          <line>250</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
+      <option name="time" value="1" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_08_190429_create_vistors_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Vistor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Tag.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/geoip.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="150" column="24" selection-start-line="150" selection-start-column="24" selection-end-line="150" selection-end-column="24" />
+          <caret line="150" column="24" lean-forward="false" selection-start-line="150" selection-start-column="24" selection-end-line="150" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#23#41#0#PHP" expanded="true" />
-          </folding>
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/phrase.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="384" column="16" selection-start-line="384" selection-start-column="16" selection-end-line="384" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/phrase.rnc" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_09_100306_create_blogs_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -948,31 +856,28 @@
     <entry file="file://$PROJECT_DIR$/app/Role.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="28" />
+          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
-          <caret line="98" column="50" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
+          <caret line="98" column="50" lean-forward="false" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
-          <caret line="253" selection-start-line="253" selection-end-line="253" />
+          <caret line="253" column="0" lean-forward="false" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -980,16 +885,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding>
-            <element signature="e#32#45#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -998,108 +900,84 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
-          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+          <caret line="50" column="21" lean-forward="false" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="32" />
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SearchController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoleController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TagController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
+          <caret line="107" column="8" lean-forward="false" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/user/addrole.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/action.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+          <caret line="36" column="58" lean-forward="false" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActionControler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <element signature="e#39#54#0#PHP" expanded="true" />
-          </folding>
+          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_11_075558_create_actions_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dashboard_layouts/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/settings.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blog/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="-275">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_07_185134_create_comments_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1110,24 +988,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <caret line="21" column="32" lean-forward="false" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="356">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1141,42 +1012,29 @@
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
-          <caret line="63" column="8" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
+          <caret line="63" column="8" lean-forward="false" selection-start-line="63" selection-start-column="8" selection-end-line="63" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Blog.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-265">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blog/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="109" column="38" lean-forward="true" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4403">
-          <caret line="259" column="22" selection-start-line="259" selection-start-column="22" selection-end-line="259" selection-end-column="38" />
+          <caret line="259" column="22" lean-forward="false" selection-start-line="259" selection-start-column="22" selection-end-line="259" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_13_181410_create_subcategories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_13_181410_create_subcategories_table.php" />
     <entry file="file://$PROJECT_DIR$/app/Category.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1190,54 +1048,102 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_13_185455_create_subcategories_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
-          <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
+          <caret line="18" column="54" lean-forward="false" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/post/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
-          <caret line="204" selection-start-line="204" selection-end-line="204" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/category/categorylist.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="198" column="22" lean-forward="true" selection-start-line="198" selection-start-column="22" selection-end-line="199" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+          <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Subcategories.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="323" column="5" lean-forward="true" selection-start-line="323" selection-start-column="5" selection-end-line="323" selection-end-column="5" />
-          <folding>
-            <element signature="e#38#60#0#PHP" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="e#10299#12009#0#PHP" />
-          </folding>
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/post/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="214" column="14" selection-start-line="214" selection-start-column="14" selection-end-line="214" selection-end-column="14" />
+        <state relative-caret-position="1659">
+          <caret line="214" column="14" lean-forward="false" selection-start-line="214" selection-start-column="14" selection-end-line="214" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/category/categorylist.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="208" column="48" lean-forward="true" selection-start-line="208" selection-start-column="48" selection-end-line="208" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blog/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/blog/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2006">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dashboard_layouts/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="63" column="44" lean-forward="false" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/core-scripting.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="12" column="72" lean-forward="true" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4709">
+          <caret line="291" column="0" lean-forward="false" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
+          <folding>
+            <element signature="e#38#60#0#PHP" expanded="true" />
+            <marker date="1568921727549" expanded="true" signature="8779:8811" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1568922093333" expanded="true" signature="9:134" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

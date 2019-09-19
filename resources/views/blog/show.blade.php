@@ -8,7 +8,7 @@
                         <form style=""  >
                             @csrf
                             <input type="hidden" name="_method" value="POST">
-                            <input type="text" name="view_count" id="view_count" class="form-control" value="{{$blogs->view_count}}">
+                        
                         <a href="{{ route('blogs.view', $blogs->id) }}">
                             <img src="{{ URL::to('/') }}/image/{{$blogs->post_photo}}" alt="" style="width: 100%;height:30%;">
                         </a>
@@ -116,18 +116,4 @@
             </div>
 
 @endsection
-<script src="http://code.jquery.com/jquery-1.11.0.min.js">
 
-   let viewCount =document.getElementById('view_count').value;
-
-    let viewCountPlusOne=parseInt('viewCount')+1;
-    viewCountPlusOne =document.getElementById('view_count').value;
-    let $formVar= $('form');
-    $.ajax({
-        url:$formVar.prop('{{route('blogs.update',[$blogs->id])}}'),
-        method:"POST",
-        data:$formVar.serialize()
-    });
-
-
-</script>

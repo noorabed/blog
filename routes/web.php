@@ -84,10 +84,5 @@ Route::get('search', 'BlogController@search')->name('blogs.search');
 
 Route::resource('logs', 'ActionControler');
 Route::get('logs/destroy/{id}', 'ActionControler@destroy');
-Route::get('blogs/fetch', 'BlogController@fetch')->name('blogs.fetch');
-/**Route::get('/ajax-subcategory',function(){
-   $cat_id=\Illuminate\Support\Facades\Input::get('cat-id');
-   $subcategories=\App\Subcategories::where('category_id','=',$cat_id)->get();
-   return \Illuminate\Http\Response::json($subcategories);
-});*/
+Route::post('blogs/fetch', 'BlogController@fetch')->name('blogs.fetch');
 Route::get('/getCategories/{id}', 'BlogController@getCategories');

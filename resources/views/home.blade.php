@@ -1,4 +1,4 @@
-@extends('dashboard_layouts/master')
+@extends('dashboard_layouts.master')
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script type="text/javascript">
@@ -120,21 +120,7 @@
                                 </div>
                             </div>
                             <!-- /.box-header -->
-                            <div class="box-body no-padding" >
-                                <ul class="users-list clearfix">
-                                  @foreach($active_user as $user)
-                                    <li>
-                                        <form  method="post" enctype="multipart/form-data">
-                                        <img src="{{ URL::to('/') }}/image/{{$user->user_photo}}"  width="80px" alt="User Image">
-                                        <a class="users-list-name" href="#">{{$user->name}}</a>
-                                        <span class="users-list-date">{{$user->created_at->diffForHumans()}}</span>
-                                        </form>
-                                    </li>
-                                    @endforeach
-
-                                </ul>
-                                <!-- /.users-list -->
-                            </div>
+                            
                             <!-- /.box-body -->
                             <div class="box-footer text-center">
                                 <a href="{{route('view')}}" class="uppercase">View All Users</a>
