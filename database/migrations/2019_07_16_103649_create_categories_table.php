@@ -16,6 +16,7 @@ class CreateCategoriesTable extends Migration
         Schema::dropIfExists('categories');
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('parent_id')->default(0);
             $table->string('slug')->unique();
             $table->string('title');
             $table->timestamps();

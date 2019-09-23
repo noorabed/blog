@@ -18,6 +18,22 @@ class Comment extends Model
         return $this->belongsTo('App\User');
     }*/
 
+    public function replies()
+    {
+        return $this->hasMany('App\Comment','parent_id','id');
+    }
+    public function commentParent(){
+        return $this->belongsTo('App\Comment', 'parent_id');
+    }
 
+//    public function parent()
+//    {
+//        return $this->belongsTo('App\Comment', 'parent_id');
+//    }
+//
+//    public function children()
+//    {
+//        return $this->hasMany('App\Comment', 'parent_id');
+//    }
 }
 

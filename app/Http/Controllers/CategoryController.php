@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Action;
 use App\Blog;
 use App\Policies\BlogPolicy;
 use App\Role;
@@ -17,12 +18,13 @@ class CategoryController extends Controller
     public function index()
     {
 
-            if(!Gate::allows('isAdmin')){
-                abort(404);
-            }
+           // if(!Gate::allows('isAdmin')){
+          //      abort(404);
+          //  }
         $user=auth()->user();
 
         $categories = Category::all();
+        $allCategories = Category::pluck('title','id')->all();
         if(request()->ajax())
         {
             return datatables()->of(Category::latest()->get())
@@ -41,7 +43,7 @@ class CategoryController extends Controller
                 ->make(true);
         }
 
-        return view('category.categorylist', compact('categories'));
+        return view('category.categorylist', compact('categories','allCategories'));
 
     }
 
@@ -63,11 +65,13 @@ class CategoryController extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }
         $category = new Category;
-        $category->title = $request->get('title');
-        $category->slug = $request->get('slug');
+        $category->title = $request->title;
+        $category->slug = $request->slug;
+        $category-> parent_id = empty($category['parent_id']) ? 0 : $request-> parent_id;
+
         //$category->user()->associate(auth()->id());
         $category->save();
-        \Action::addToLog('search for add category ');
+       Action::addToLog('search for add category ');
 
         return response()->json(['success' => 'Data Added successfully.']);
        }
@@ -82,13 +86,24 @@ class CategoryController extends Controller
     }
     public function update(Request $request)
     {
-        $validated = $request->validate([
+        $rules = array(
             'title' => 'required',
             'slug' => 'required',
-        ]);
-       // dd($request->all());
-        Category::whereId($request->hidden_id)->update($validated);
-        \Action::addToLog('search for update category ');
+        );
+
+        $error = Validator::make($request->all(), $rules);
+
+        if ($error->fails()) {
+            return response()->json(['errors' => $error->errors()->all()]);
+        }
+        $form_data = array(
+            'title' => $request->title,
+            'slug' => $request->slug,
+        'parent_id' => empty($form_data['parent_id']) ? 0 :$request-> parent_id
+        );
+        Category::whereId($request->hidden_id)->update($form_data);
+
+        Action::addToLog('search for update category ');
 
         return response()->json(['success' => 'Category is successfully updated']);
     }
@@ -96,19 +111,10 @@ class CategoryController extends Controller
     {
         $data = Category::find($id);
         $data->delete();
-        \Action::addToLog('search for delete category ');
+        Action::addToLog('search for delete category ');
 
     }
 
 
-    function test( User $user){
-        $user_role = Role::find($user->role_id);
-        $role_permissions = $user_role->permissions;
-        foreach ($role_permissions as $permission) {
-            if ($permission->id ==6) {
-                return true;
-            }
-        }
-        return false;
-    }
+
 }

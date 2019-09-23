@@ -114,7 +114,17 @@
                                <input type="text" name="slug" id="slug" class="form-control" />
                            </div>
                        </div>
-
+                       <div class="form-group">
+                           <label class="control-label col-md-4"> Select Category : </label>
+                           <div class="col-md-8">
+                       <select  name="parent_id" id="parent_id" class="form-control" >
+                               <option> Select Your Category</option>
+                           @foreach($categories as $category)
+                               <option value="{{$category->id}}">{{$category->title}}</option>
+                           @endforeach
+                       </select>
+                           </div>
+                       </div>
                        <div class="form-group" align="center">
                            <input type="hidden" name="action" id="action" />
                            <input type="hidden" name="hidden_id" id="hidden_id" />
@@ -176,11 +186,10 @@
            });
 
            $('#create_category').click(function(){
-               $('.modal-title').text("Add Tittle");
+               $('.modal-title').text("Add  New Categpry Tittle");
                $('#action_button').val("Add");
                $('#action').val("Add");
                $('#formModal').modal('show');
-               $('#hidden_id').val(html.data.id);
            });
 
            $('#sample_form').on('submit', function(event){
@@ -222,10 +231,6 @@
 
                if($('#action').val() == "Edit")
                {
-
-                   //hidden_id
-                   //
-
                    $.ajax({
                        url:"{{ route('categories.update') }}",
                        method:"POST",
@@ -268,13 +273,13 @@
                    dataType:"json",
                    success:function(html){
                        $('#title').val(html.data.title);
+                       $('#slug').val(html.data.slug);
+                       $('#parent_id').val(html.data.parent_id);
                        $('.modal-title').text("Edit Tittle");
                        $('#action_button').val("Edit");
                        $('#action').val("Edit");
-                       $('#formModal').modal('show');
                        $('#hidden_id').val(id);
-
-
+                       $('#formModal').modal('show');
                    }
                })
            });

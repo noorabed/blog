@@ -39,9 +39,9 @@
                    @endcan
                 </ul>
             </li>
-@can('isAdmin')
+           {{-- @can('isAdmin')--}}
             <li><a href="{{route('categories.index')}}"><i class="fa fa-folder"></i> <span>Categories</span></a></li>
-            @endcan
+            {{--@endcan--}}
             @can('blogs.deletetag',Auth::user())
             <li><a href="{{route('tags.index')}}"><i class="fa fa-folder"></i> <span>Tags</span></a></li>
             @endcan

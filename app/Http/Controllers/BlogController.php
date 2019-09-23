@@ -10,6 +10,7 @@ use App\Blog;
 use App\User;
 use App\Action;
 use App\Category;
+use App\Comment;
 use App\Tag;
 use DB;
 use function Sodium\compare;
@@ -112,11 +113,12 @@ class BlogController extends Controller
             $newBlog->post_descripition= $request->post_descripition;
             $newBlog->post_photo = $new_name;
             $newBlog->user_id =auth()->id();
-            $newBlog->view_count = auth()->id();
+            $newBlog->view_count =rand(1,10);
             $newBlog->category_id = $request->category_id;
             $newBlog->published_at= $request->published_at;
 
             $newBlog->save();
+           // dd($newBlog);
           //  $create = Blog::create($form_data);
             if ($newBlog) {
                 $tagNames = explode(',', $request->get('post_tags'));
@@ -218,7 +220,7 @@ class BlogController extends Controller
             'post_photo'            =>   $image_name,
             'slug'               =>$request->slug,
             'excerpt'               =>$request->excerpt,
-            'view_count' => $request->view_count,
+            'view_count' => rand(1,10),
         );
 
         $update=Blog::whereId($id)->update($form_data);
@@ -251,11 +253,12 @@ class BlogController extends Controller
      public function show( Request $request){
 
          $tags=Tag::all();
+         $comment=Comment::all();
         $categories = Category::with('posts')
             ->orderBy('title','asc')
             ->get();
 
-        $blogs=Blog::with('user','comments')
+        $blogs=Blog::with('user')
             ->latest()
            ->LatestFirst()->published();
         // check
@@ -267,10 +270,11 @@ class BlogController extends Controller
          $blogs=$blogs->simplePaginate($this->limit);
 
 
-        return view('blog.index',compact('blogs', 'categories','tags'));
+        return view('blog.index',compact('blogs', 'categories','tags','comment'));
     }
     public function fetch(Request $request)
       {
+
             if($request->get('query'))
             {
             $query = $request->get('query');
@@ -282,7 +286,7 @@ class BlogController extends Controller
                 foreach($data as $row)
                 {
                     $output .= '
-                     <li><a href="#">'.$row->post_tittle.'</a></li>
+                     <li><a  href="' . route('blogs.view',$row->id). '">'.$row->post_tittle.'</a></li>
                      ';
                 }
                 $output .= '</ul>';
@@ -304,6 +308,8 @@ class BlogController extends Controller
             $blogs->update(['view_count' => $viewCount]);
             Session::put($blogKey, 1);
         }
+
+       // dd($blogs->comments,$blogs->comments[0]->replies,$blogs->comments[0]->commentParent );
 
         return view('blog.show',compact('blogs', 'tags','setting'));
     }
@@ -352,7 +358,6 @@ class BlogController extends Controller
                 if ($request->has('post_tittle')) {
                     $query->where('post_tittle', 'like', "%{$request->get('post_tittle')}%");
                 }
-
                 Action::addToLog('search for post tittle');
                 if ($request->has('created_at')) {
                     $query->where('created_at', 'like', "%{$request->get('created_at')}%");
@@ -362,11 +367,11 @@ class BlogController extends Controller
               if($search=='published'){
                return $query->whereNotNull('published_at')
                       ->get();
-              }
+                 }
               elseif($search=='Draft'){
                return $query->whereNull('published_at')
                       ->get();
-              }
+                }
 
                Action::addToLog('search for post state ');
             })
@@ -379,11 +384,6 @@ class BlogController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function getCategories($id)
-    {
-        $subcategory= Subcategories::where('category_id',$id)->get();
-        return json_encode($subcategory);
-    }
 
     public function destroy($id)
     {

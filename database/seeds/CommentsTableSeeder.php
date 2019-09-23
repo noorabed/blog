@@ -27,6 +27,7 @@ class CommentsTableSeeder extends Seeder
                     'user_url'=> $faker->domainName,
                     'comment'=> $faker->paragraph(rand(1,5),true),
                     'blog_id'=> $blog->id,
+                    'parent_id'=> '0',
                     'created_at'=>$commentDate,
                     'updated_at'=>$commentDate,
                     //'user_id'->$user->id,

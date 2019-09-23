@@ -91,40 +91,50 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">Category </h3>
                         </div>
-                        <div class="box-body">
-                            <div>
-                            <label for="">Categories</label>
-                            <select class="form-control" name="category" id="category">
-                                <option value="">Select Category </option>
-                                @foreach($categories as $category)
-                                <option value="{{$category->id}}">{{$category->title}} </option>
-                                @endforeach
-                            </select>
+                        {{-- <div class="box-body">
+                             <div>
+                             <label for="">Categories</label>
+                             <select class="form-control" name="category" id="category">
+                                 <option value="">Select Category </option>
+                                 @foreach($categories as $category)
+                                 <option value="{{$category->id}}">{{$category->title}} </option>
+                                 @endforeach
+                             </select>
 
-                            <label for=""> SubCategories</label>
-                            <select class="form-control" name="subcategory" id="subcategory">
-                                <option value=""> </option>
-                            </select>
-                            </div>
+                             </div>
 
-                      {{--<div class="box-header with-border">
-                            <h3 class="box-title">Category And Sub Category</h3>
-                        </div>
-                        <div class="box-body">
-                            <div class="radio {{$errors->has('category_id')? 'has-error':''}}">
-                                <label>
-                                    @foreach($categories as $category)
-                                        <input type="radio" name="category_id" id="category-1"  value="{{$category->id}}"> {{$category->title}}
-                                        <br />
-                                    @endforeach
-                                </label>
-                                @if($errors->has('category_id'))
-                                    <span class="help-block">{{$errors->first('category_id')}}</span>
-                                @endif
+                       <div class="box-header with-border">
+                             <h3 class="box-title">Category And Sub Category</h3>
+                         </div>--}}
+                         <div class="box-body">
+                             <div class="radio {{$errors->has('category_id')? 'has-error':''}}">
+                                 <label>
+                                     @foreach($categories as $category)
+                                         @if($category->categoryChildren->count() > 0)
+                                             <li class="dropdown">
+                                         <input type="radio" name="category_id" id="category-1"  value="{{$category->id}}"> {{$category->title}}
+                                         <br />
+                                                 <ul>
+                                                     @foreach($category->categoryChildren as $subcategory)
+                                                         <li><input type="radio" name="category_id" id="category-1" value="{{$subcategory->id}}">{{ $subcategory->title }}</li>
+                                                     @endforeach
+                                                 </ul>
+                                             </li>
+                                         @else
+                                             <li class="dropdown">
+                                             <input type="radio" name="category_id" id="category-1"  value="{{$category->id}}"> {{$category->title}}
+                                                 <br />
+                                             </li>
+                                         @endif
+                                     @endforeach
+                                 </label>
+                                 @if($errors->has('category_id'))
+                                     <span class="help-block">{{$errors->first('category_id')}}</span>
+                                 @endif
 
-                            </div>
+                             </div>
 
-                        </div>--}}
+                         </div>
                     </div>
                         <br>
                     <div class="box">
@@ -158,6 +168,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </form>
 
         <!-- ./row -->
@@ -189,29 +200,6 @@
                     $('#post_form').submit();
                 });
 
-                $('select[name=category]').on('change',function () {
-                  //console.log('noor');
-                    var category_id=$(this).val();
-                    if(category_id){
-                       // console.log(category_id);
-                       $. ajax({
-                            url: '/getCategories/'+category_id,
-                           type:'GET',
-                           dataType:'json',
-                           success:function(data)
-                           {
-                             console.log(data);
-                               $('select[name=subcategory]').empty();
-                               $.each(data,function (Key,value) {
-                                   $('select[name=subcategory]').append('<option value="'+Key+'">'+value+'</option>');
-
-                               });
-                           }
-                        });
-                    }else{
-                        $('select[name=subcategory]').empty();
-                    }
-                });
             });
 
 

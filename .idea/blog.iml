@@ -18,6 +18,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/garetjax/phpbrowscap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/geoip2/geoip2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hisorange/browser-detect" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/hisorange/traits" />
@@ -56,9 +59,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/santigarcor/laratrust" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
@@ -121,6 +126,9 @@
           <root url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
           <root url="file://$MODULE_DIR$/vendor/garetjax/phpbrowscap" />
           <root url="file://$MODULE_DIR$/vendor/geoip2/geoip2" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
           <root url="file://$MODULE_DIR$/vendor/hisorange/browser-detect" />
           <root url="file://$MODULE_DIR$/vendor/hisorange/traits" />
@@ -159,9 +167,11 @@
           <root url="file://$MODULE_DIR$/vendor/phpunit/php-token-stream" />
           <root url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
           <root url="file://$MODULE_DIR$/vendor/psr/container" />
+          <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
           <root url="file://$MODULE_DIR$/vendor/psy/psysh" />
+          <root url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
           <root url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
           <root url="file://$MODULE_DIR$/vendor/santigarcor/laratrust" />
           <root url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
@@ -220,6 +230,9 @@
           <root url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
           <root url="file://$MODULE_DIR$/vendor/garetjax/phpbrowscap" />
           <root url="file://$MODULE_DIR$/vendor/geoip2/geoip2" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
           <root url="file://$MODULE_DIR$/vendor/hisorange/browser-detect" />
           <root url="file://$MODULE_DIR$/vendor/hisorange/traits" />
@@ -258,9 +271,11 @@
           <root url="file://$MODULE_DIR$/vendor/phpunit/php-token-stream" />
           <root url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
           <root url="file://$MODULE_DIR$/vendor/psr/container" />
+          <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
           <root url="file://$MODULE_DIR$/vendor/psy/psysh" />
+          <root url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
           <root url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
           <root url="file://$MODULE_DIR$/vendor/santigarcor/laratrust" />
           <root url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />

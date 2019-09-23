@@ -17,16 +17,24 @@ class Category extends Model
 //        return $this->belongsToMany('App\Blog','category_blog');
 //    }
 
-    public function posts()
-    {
+       public function posts()
+        {
         return $this->hasMany('App\Blog');
-    }
+       }
 
 
-    public function getRouteKeyName()
+     public function getRouteKeyName()
 
-    {
+      {
         return 'slug';
+      }
+     public function categoryParent(){
+        return $this->belongsTo('App\Category', 'parent_id');
+      }
+     public function categoryChildren(){
+        return $this->hasMany('App\Category', 'parent_id');
     }
+
+
 
 }

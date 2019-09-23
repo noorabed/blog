@@ -75,11 +75,9 @@
         </div>
     </aside>
 </div>
-@push('script')
 
-@endpush
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript">
+<script>
     $(document).ready(function(){
         $('#post_tittle').keyup(function(){
             var query = $(this).val();

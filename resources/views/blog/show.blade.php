@@ -1,5 +1,9 @@
 @extends('layouts.main')
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 @section('content')
 
             <div class="col-md-8">
@@ -63,16 +67,46 @@
                     <div class="comment-body padding-10">
                         <ul class="comments-list">
                           @foreach($blogs->comments as $comment)
+                                @if($comment->replies->count() > 0)
                             <li class="comment-item">
                                 <div class="comment-heading clearfix">
                                     <div class="comment-author-meta">
-                                        <h4>{{$comment->user_name}}    <small>{{$comment->created_at->diffForHumans()}}</small></h4>
+                                        <h4>{{$comment->user_name}}    <small>{{$comment->created_at->diffForHumans()}}</small> </h4>
                                     </div>
                                 </div>
                                 <div class="comment-content">
                                     {{$comment->comment}}
+                                    <button type="button" name="reply" id="reply" class=" reply btn btn-success btn-sm">Add Reply</button>
                                 </div>
-                            </li>
+                                        <ul class="comments-list-children">
+                                            @foreach($comment->replies as $subcomment)
+                                            <li class="comment-item">
+                                                <div class="comment-heading clearfix">
+                                                    <div class="comment-author-meta">
+                                                        <h4>{{$subcomment->user_name}} <small>{{$subcomment->created_at->diffForHumans()}}</small></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-content">
+                                                    {{$subcomment->comment}}
+                                                    <button type="button" name="reply" id="reply" class=" reply btn btn-success btn-sm">Add Reply</button>
+                                                </div>
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                @else
+                                    <li class="comment-item">
+                                        <div class="comment-heading clearfix">
+                                            <div class="comment-author-meta">
+                                                <h4>{{$comment->user_name}}    <small>{{$comment->created_at->diffForHumans()}}</small></h4>
+                                            </div>
+                                        </div>
+                                        <div class="comment-content">
+                                            {{$comment->comment}}
+                                            <button type="button" name="reply" id="reply" class=" reply btn btn-success btn-sm">Add Reply</button>
+                                        </div>
+                                    </li>
+                                @endif
+
                       @endforeach
                         </ul>
 
@@ -98,8 +132,10 @@
                                 <label for="comment">Comment</label>
                                 <textarea name="comment" id="comment" rows="6" class="form-control"></textarea>
                             </div>
+                            <input type="hidden" name="parent_id" id="parent_id">
                             <div class="clearfix">
                                 <div class="pull-left">
+
                                     <button type="submit" class="btn btn-lg btn-success">Submit</button>
                                 </div>
                                 <div class="pull-right">
@@ -113,7 +149,105 @@
                     </div>
 @endif
                 </article>
+
+                <div id="formModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add Comment Reply</h4>
+                            </div>
+                            <div class="modal-body">
+                                <span id="form_result"></span>
+                                <form method="post" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4" > Name : </label>
+                                        <div class="col-md-8">
+                                            <input type="text" name="user_name"  class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Email : </label>
+                                        <div class="col-md-8">
+                                            <input type="text" name="user_email"  class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Website : </label>
+                                        <div class="col-md-8">
+                                            <input type="text" name="user_url"   class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Reply : </label>
+                                        <div class="col-md-8">
+                                            <input type="text" name="comment"   class="form-control" />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="form-group" align="center">
+                                        <input type="hidden" name="parent_id"  value="{{ @ $comment->id}}"/>
+                                        <input type="submit" name="action_button" id="action_button" class="btn btn-warning" value="Add" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <script>
+
+                $(document).ready(function(){
+
+
+                    $(document).on('click', '.reply', function(){
+                        $('.modal-title').text("Add Reply");
+                        $('#action_button').val("Add");
+                        $('#formModal').modal('show');
+                    });
+
+                    $('#sample_form').on('submit', function(event){
+                        event.preventDefault();
+
+                            $.ajax({
+                                url:"{{ route('blogs.comments',$blogs->id) }}",
+                                method:"POST",
+                                data: new FormData(this),
+                                contentType: false,
+                                cache:false,
+                                processData: false,
+                                dataType:"json",
+                                success:function(data)
+                                {
+                                    var html = '';
+                                    if(data.errors)
+                                    {
+                                        html = '<div class="alert alert-danger">';
+                                        for(var count = 0; count < data.errors.length; count++)
+                                        {
+                                            html += '<p>' + data.errors[count] + '</p>';
+                                        }
+                                        html += '</div>';
+                                    }
+                                    if(data.success)
+                                    {
+                                        html = '<div class="alert alert-success">' + data.success + '</div>';
+                                        $('#sample_form')[0].reset();
+                                        $('#formModal').modal('hide');
+                                    }
+                                    $('#form_result').html(html);
+                                }
+                            })
+
+
+
+                    });
+
+
+                });
+            </script>
 
 @endsection
+
 
