@@ -11,6 +11,8 @@
 |
 */
 use Illuminate\Http\Request;
+use App\User;
+use App\Message;
 Route::get('/', function () {
     return view('layouts/welcome');
 });
@@ -41,6 +43,7 @@ Route::resource('users', 'UserController');
 Route::post('users/update', 'UserController@update')->name('users.update');
 Route::get('users/destroy/{id}', 'UserController@destroy');
 Route::get('changestate/{id}','UserController@changestate')->name('users.changestate');
+Route::get('edituserrole/{id}','UserController@edituserrole')->name('users.edituserrole');
 //category
 Route::resource('category/categories', 'CategoryController');
 Route::get('/category/categorylist', 'CategoryController@index')->name('categories.index');
@@ -91,3 +94,22 @@ Route::get('/sendemail', 'SendEmailController@index')->name('send.index');
 Route::post('/sendemail/send', 'SendEmailController@send');
 
 Route::get('/remove', 'CommentController@remove');
+
+Route::get('/chat', 'ChatController@index')->name('chat')->middleware('auth');
+Route::get('/messages',function (){
+    $messages = Message::with(['user'])->get();
+
+    return response()->json($messages);
+
+});
+
+Route::post('/messages',function (){
+    $user=Auth::user();
+    $message=$user->messages()->Create([
+        'message'=>request()->get('message')
+    ]);
+
+    broadcast(new \App\Events\MessageCreated($message,$user))->toOthers();
+    return response()->json($message);
+    })->middleware('auth');
+

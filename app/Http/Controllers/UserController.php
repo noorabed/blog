@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Action;
+use App\ActionRole;
+use App\Permission;
 use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -12,6 +14,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Validator;
+use DB;
 class UserController extends Controller
 {
     public function index()
@@ -33,14 +36,16 @@ class UserController extends Controller
                 ->addColumn('action', function($data){
                    // $button = ' <input type="checkbox" name="state" data-id="'.$data->id.'" onclick="static(this)" class="toggle-class" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" />';
                     $button = '<button type="button" name="state" data-id="'.$data->id.'" onclick="static(this)" class="state btn btn-default btn-sm">Change State</button>';
-                    $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
+                    $button .= '&nbsp;&nbsp;';
                     if (\Gate::allows('users.update')) {
                         $button .= '<button type="button" name="edit" id="' . $data->id . '" class="edit btn btn-primary btn-sm">Edit</button>';
                     }
-                    $button .= '&nbsp;&nbsp;&nbsp;&nbsp;';
+                    $button .= '&nbsp;&nbsp;';
                     if (\Gate::allows('users.delete')) {
                         $button .= '<button type="button" name="delete" id="' . $data->id . '" class="delete btn btn-danger btn-sm">Delete</button>';
                     }
+                    $button .= '&nbsp;&nbsp;';
+                    $button .=  '<a href="'. route('users.edituserrole',$data->id) .'" name="editrole" id="'.$data->id.'" class="edit btn btn-default">EditRole</a>';
                     return $button;
                 })
                 ->rawColumns(['action'])
@@ -199,5 +204,18 @@ class UserController extends Controller
         }
         return view('user.action',compact('logs'));
     }
+
+    public function edituserrole($id){
+      //  $permissions=ActionRole::all();
+        $users = DB::table('action_roles')
+            ->where('role_id', '=', auth()->user()->role_id)
+            ->orWhere('user_id', '=', auth()->id())
+            ->pluck('permissions_name')->toArray();
+        $permissions = Role::find(auth()->user()->role_id)->permissions;
+        $roles = Role::find(auth()->user()->role_id);
+       // dd($users,$permissions,$roles);
+        return view('user.edituserrole',compact('roles','permissions','users'));
+
+}
 
 }

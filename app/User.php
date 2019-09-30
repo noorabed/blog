@@ -51,14 +51,27 @@ class User extends Authenticatable
         return $this->hasMany('App\Comment');
     }
 
-    public function roles()
-    {
-        return $this->belongsTo('App\Role');
+//    public function roles()
+//    {
+//        return $this->belongsTo('App\Role');
+//
+//    }
 
+    public function roles(){
+        return $this->belongsToMany('App\Role','action_roles')->withPivot('role_id');
+    }
+
+    public function permissions(){
+        return $this->belongsToMany('App\Permission','action_roles')->withPivot('permissions_name');
     }
     public function visitor()
     {
         return $this->hasMany('App\Vistor');
+    }
+
+    public function messages()
+    {
+        return $this->hasMany('App\Message');
     }
 
 }

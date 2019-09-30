@@ -20,7 +20,9 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('chat-message', require('./components/ChatMessage.vue').default);
+Vue.component('chat-log', require('./components/ChatLog.vue').default);
+Vue.component('chat-composer', require('./components/ChatComposer.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,4 +31,42 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data:{
+        messages: [],
+        usersInRoom: []
+    },
+    methods:{
+        addMessage( message){
+           // console.log("This is App" );
+           // console.log(message );
+            this.messages.push( message);
+            axios.post('/messages',message).then(response => {
+
+            })
+        }
+    },
+    created(){
+        axios.get('messages').then((response) => {
+             this.messages=response.data;
+        });
+
+        Echo.join('chat')
+            .here((users) => {
+                this.usersInRoom = users;
+            })
+            .joining((user) => {
+                this.usersInRoom.push(user);
+            })
+            .leaving((user) => {
+                this.usersInRoom = this.usersInRoom.filter(u => u != user)
+            })
+            .listen('MessageCreated', (e) => {
+                this.messages.push({
+                    message: e.message.message,
+                    user: e.user
+                });
+            });
+    }
+
+
 });

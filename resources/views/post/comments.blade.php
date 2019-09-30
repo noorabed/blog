@@ -38,7 +38,7 @@
                             <thead>
                             <tr>
                             <tr>
-                                <th style="width: 10px"><input name="select_all" value="1" id="example-select-all"  class="selected" type="checkbox" /></th>
+                                <th style="width: 10px"><input name="select_all" value="" id="example-select-all"  class="selected" type="checkbox" /></th>
                                 <th style="width: 10px">#</th>
                                 <th>Name</th>
                                 <th>Email</th>
@@ -175,8 +175,6 @@
 
             $(document).on('click', '#bulk_delete', function(){
                 var id = [];
-                if(confirm("Are you sure you want to Delete this data?"))
-                {
                     $('.selected:checked').each(function(){
                         id.push($(this).val());
                     });
@@ -188,15 +186,11 @@
                             data:{id:id},
                             success:function(data)
                             {
-                                alert(data);
                                 $('#comment_table').DataTable().ajax.reload();
                             }
                         });
-                    }
-                    else
-                    {
-                        alert("Please select atleast one checkbox");
-                    }
+
+
                 }
             });
         });

@@ -144,7 +144,7 @@ class CommentController extends Controller
     function remove(Request $request)
     {
         $id= $request->input('id');
-        $comment = Comment::whereIn('id', $id);
+        $comment = Comment::where('id', $id);
         //dd($comment);
         if($comment->delete())
         {

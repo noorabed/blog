@@ -34,9 +34,9 @@
                     @can('blogs.view',Auth::user())
                     <li><a href="{{route('blogs.index')}}"><i class="fa fa-circle-o"></i> All Posts</a></li>
                     @endcan
-                  @can('blogs.create',Auth::user())
-                    <li><a href="{{route('blogs.create')}}"><i class="fa fa-circle-o"></i> Add New</a></li>
-                   @endcan
+                @can('blogs.create',Auth::user())
+                      <li><a href="{{route('blogs.create')}}"><i class="fa fa-circle-o"></i> Add New</a></li>
+                          @endcan
                 </ul>
             </li>
            {{-- @can('isAdmin')--}}

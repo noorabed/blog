@@ -66,7 +66,7 @@ class RoleController extends Controller
         $roles->save();
         $roles->permissions()->sync($request->permission);
 
-        return redirect('/roles')->with('success', 'Blog Added successfully.');
+        return redirect('/roles')->with('success', ' Added successfully.');
     }
 
     /**
@@ -134,4 +134,6 @@ class RoleController extends Controller
         $data = Role::findOrFail($id);
         $data->delete();
     }
+
+
 }

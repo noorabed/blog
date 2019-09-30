@@ -71,14 +71,14 @@ class BlogController extends Controller
         public function create(){
 
             $user = Auth::user();
-            if ($user->can('create', Blog::class)) {
+        //    if ($user->can('create', Blog::class)) {
                 $tags = Tag::all();
                 $categories = Category::all();
                 return view('post.create', compact('blogs', 'categories', 'tags'));
-            } else {
-                echo 'Not Authorized';
-            }
-            exit;
+       //     } else {
+        //        echo 'Not Authorized';
+         //   }
+         //   exit;
         }
 
 

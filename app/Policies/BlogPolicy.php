@@ -1,17 +1,18 @@
 <?php
 
 namespace App\Policies;
-
+use DB;
 use App\User;
 use App\Blog;
 use App\Role;
 use App\Category;
+
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BlogPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any blogs.
      *
@@ -177,7 +178,7 @@ class BlogPolicy
         }
         return false;
     }
-    public function deletetag(User $user)
+    public function deletetag(User $user )
     {
         $user_role = Role::find($user->role_id);
         $role_permissions = $user_role->permissions;
@@ -190,4 +191,4 @@ class BlogPolicy
     }
 
 
-}
+   }

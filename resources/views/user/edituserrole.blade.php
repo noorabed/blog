@@ -5,7 +5,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-           Edit Role
+            Edit Role
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -67,12 +67,12 @@
                                             @if($permission->for =='post')
                                                 <td>
                                                     <label>
-                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}"
-                                                        @foreach ($roles->permissions as $role_permission)
-                                                            @if($role_permission->id ==$permission->id)
+                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->name}}"
+                                                               @foreach ($roles->permissions as $role_permission)
+                                                               @if(in_array($permission->name,$users))
                                                                checked
-                                                               @endif
-                                                            @endforeach>
+                                                                @endif
+                                                                @endforeach>
                                                         {{$permission->name}}
                                                     </label>
                                                     @endif
@@ -84,10 +84,11 @@
                                         @foreach($permissions as $permission )
                                             @if($permission->for =='category')
                                                 <td>
+                                                <td>
                                                     <label>
-                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}"
+                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->name}}"
                                                                @foreach ($roles->permissions as $role_permission)
-                                                               @if($role_permission->id ==$permission->id)
+                                                               @if(in_array($permission->name,$users))
                                                                checked
                                                                 @endif
                                                                 @endforeach>
@@ -103,9 +104,9 @@
                                             @if($permission->for =='tag')
                                                 <td>
                                                     <label>
-                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}"
+                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->name}}"
                                                                @foreach ($roles->permissions as $role_permission)
-                                                               @if($role_permission->id ==$permission->id)
+                                                               @if(in_array($permission->name,$users))
                                                                checked
                                                                 @endif
                                                                 @endforeach>
@@ -121,9 +122,9 @@
                                             @if($permission->for =='user')
                                                 <td>
                                                     <label>
-                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}"
+                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->name}}"
                                                                @foreach ($roles->permissions as $role_permission)
-                                                               @if($role_permission->id ==$permission->id)
+                                                               @if(in_array($permission->name,$users))
                                                                checked
                                                                 @endif
                                                                 @endforeach>
@@ -133,32 +134,32 @@
                                                 </td>
                                                 @endforeach
                                     </tr>
-                                   @if($roles->id ==1)
-                                    <tr>
-                                        <td>Settings</td>
-                                     @foreach($permissions as $permission )
-                                            @if($permission->for =='setting')
-                                                <td>
-                                                    <label>
-                                                        <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->id}}"
-                                                               @foreach ($roles->permissions as $role_permission)
-                                                               @if($role_permission->id ==$permission->id)
-                                                                    checked
-                                                                @endif
-                                                                @endforeach>
-                                                        {{$permission->name}}
-                                                    </label>
-                                                    @endif
-                                                </td>
-                                                @endforeach
-                                    </tr>
-                                       @endif
+                                    @if($roles->id ==1)
+                                        <tr>
+                                            <td>Settings</td>
+                                            @foreach($permissions as $permission )
+                                                @if($permission->for =='setting')
+                                                    <td>
+                                                        <label>
+                                                            <input type="checkbox" class="flat-red" name="permission[]"  value="{{$permission->name}}"
+                                                                   @foreach ($roles->permissions as $role_permission)
+                                                                   @if(in_array($permission->name,$users))
+                                                                   checked
+                                                                    @endif
+                                                                    @endforeach>
+                                                            {{$permission->name}}
+                                                        </label>
+                                                        @endif
+                                                    </td>
+                                                    @endforeach
+                                        </tr>
+                                    @endif
                                     </tbody>
                                 </table>
                             </div>
 
                             <div class="box-footer">
-                                <a  href="{{ route('roles.index')}}" class="btn btn-default" type="submit">Cancel</a>
+                                <a  href="{{ route('view')}}" class="btn btn-default" type="submit">Cancel</a>
                                 <button  class="btn btn-success pull-right" type="submit">Submit</button>
                             </div>
                         </div>
