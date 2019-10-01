@@ -14,10 +14,10 @@ class permission extends Model
 //    }
 
     public function roles(){
-        return $this->belongsToMany('App\Role','action_roles')->withPivot('role_id');
+        return $this->belongsToMany('App\Role','action_roles');
     }
 
     public function users(){
-        return $this->belongsToMany('App\User','action_roles')->withPivot('user_id');
+        return $this->belongsToMany('App\User','action_roles');
     }
 }

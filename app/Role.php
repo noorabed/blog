@@ -19,10 +19,10 @@ class Role extends Model
 //    }
 
     public function permissions(){
-        return $this->belongsToMany('App\Permission','action_roles')->withPivot('permissions_name');
+        return $this->belongsToMany('App\Permission','action_roles');
     }
 
     public function users(){
-        return $this->belongsToMany('App\User','action_roles')->withPivot('user_id');
+        return $this->belongsToMany('App\User','action_roles');
     }
 }

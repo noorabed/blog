@@ -57,12 +57,12 @@ class User extends Authenticatable
 //
 //    }
 
-    public function roles(){
-        return $this->belongsToMany('App\Role','action_roles')->withPivot('role_id');
-    }
+//    public function roles(){
+//        return $this->belongsToMany('App\Role','action_roles');
+//    }
 
     public function permissions(){
-        return $this->belongsToMany('App\Permission','action_roles')->withPivot('permissions_name');
+        return $this->belongsToMany('App\Permission','action_roles');
     }
     public function visitor()
     {

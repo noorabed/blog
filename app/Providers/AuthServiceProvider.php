@@ -41,8 +41,7 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('users.delete','App\Policies\UserPolicy@delete') ;
         Gate::define('users.updatesetting','App\Policies\UserPolicy@updatesetting') ;
 
-
-        //$gate->define('isAdmin', function($user){
+        //$gate->define('isAdmin', function($user,){
         //    return $user->id == '1' ;
       //  });
 

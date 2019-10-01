@@ -44,6 +44,7 @@ Route::post('users/update', 'UserController@update')->name('users.update');
 Route::get('users/destroy/{id}', 'UserController@destroy');
 Route::get('changestate/{id}','UserController@changestate')->name('users.changestate');
 Route::get('edituserrole/{id}','UserController@edituserrole')->name('users.edituserrole');
+Route::post('/user/updatetuserrole/{id}', 'UserController@updatetuserrole')->name('users.updatetuserrole');
 //category
 Route::resource('category/categories', 'CategoryController');
 Route::get('/category/categorylist', 'CategoryController@index')->name('categories.index');
@@ -69,6 +70,7 @@ Route::get('/tag/{tag}','BlogController@tag')->name('tag');
 Route::resource('roles', 'RoleController');
 Route::post('/user/roles/update{id}', 'RoleController@update')->name('roles.update');
 Route::get('roles/destroy/{id}', 'RoleController@destroy');
+//Route::post('/user/roles/update{id}', 'RoleController@updateuser')->name('roles.updateuser');
 //permission
 Route::resource('permissions', 'PermissionController');
 Route::post('/user/permissions/update', 'PermissionController@update')->name('permissions.update');

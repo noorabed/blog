@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\ActionRole;
 use App\Blog;
 use App\Role;
+use App\User;
 use App\Permission;
 use Validator;
+use DB;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -117,7 +120,32 @@ class RoleController extends Controller
         $roles = Role::findOrFail($id);
         $roles->name = $request->get('name');
         $roles->save();
+
         $roles->permissions()->sync($request->permission);
+
+        return redirect('/roles');
+
+    }
+  public function updateuser(Request $request,$id)
+    {
+        //return $request->all();
+        $rules =array(
+            'name' => 'required',
+        );
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+        {
+            return response()->json(['errors' => $error->errors()->all()]);
+        }
+        $user=User::find(auth()->user()->id)->only('id');
+      //  dd( $request->all());
+        $action=new ActionRole();
+       // $action->user_id= $user;
+        $action->role_id = $request->role_id ?$request->role_id:0;
+        $action->permissions()->sync($request->permission);
+        $action->save();
+        //dd($action);
 
         return redirect('/roles');
 

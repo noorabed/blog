@@ -17,9 +17,11 @@ class CreateActionRolesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->nullable();
             $table->integer('role_id');
+            $table->integer('permission_id');
             $table->text('permissions_name');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+          //  $table->foreign('permissions_id')->references('id')->on('permissions')->onDelete('cascade');
+         //   $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+         //   $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -208,14 +208,35 @@ class UserController extends Controller
     public function edituserrole($id){
       //  $permissions=ActionRole::all();
         $users = DB::table('action_roles')
-            ->where('role_id', '=', auth()->user()->role_id)
-            ->orWhere('user_id', '=', auth()->id())
-            ->pluck('permissions_name')->toArray();
+            ->where('role_id', '=',  auth()->user()->role_id)
+            ->orWhere('user_id', '=', auth()->user()->id)
+            ->pluck('permission_id')->toArray();
+    // dd($users);
         $permissions = Role::find(auth()->user()->role_id)->permissions;
         $roles = Role::find(auth()->user()->role_id);
-       // dd($users,$permissions,$roles);
-        return view('user.edituserrole',compact('roles','permissions','users'));
+        $user=User::find(auth()->user()->id);
+         //dd($users,$permissions,$roles,$user);
+        return view('user.edituserrole',compact('roles','permissions','users','user'));
 
 }
+    /**public function updatetuserrole(Request $request,$id){
+        //dd( $request->all());
+        $user=User::find(auth()->user()->id)->only('id');
+       // dd($user);
+        $action=new User();
+         $action->user_id= $user;
+        $action->role_id = $request->role_id ?$request->role_id:0;
+        $action->save();
+       // dd($action);
+        $action->permissions();
+
+        return redirect('/roles');
+
+
+
+
+    }*/
+
+
 
 }
